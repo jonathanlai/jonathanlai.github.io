@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Node.js on 幻猿 的博客</title>
+    <link>https://www.hunayuan.mobi/categories/Node.js/</link>
+    <description>Recent content in Node.js on 幻猿 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://www.hunayuan.mobi/categories/Node.js/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>通过nvm安装Node.js</title>
+      <link>https://www.hunayuan.mobi/post/2022-03-18-3-%E9%80%9A%E8%BF%87nvm%E5%AE%89%E8%A3%85Node.js/</link>
+      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
+      
+      <guid>https://www.hunayuan.mobi/post/2022-03-18-3-%E9%80%9A%E8%BF%87nvm%E5%AE%89%E8%A3%85Node.js/</guid>
+      <description>有段时间没有使用node.js了，今天发现电脑上环境已经破坏，那就只能重安装了。 前提 安装前先将本地已有的node.js卸载干净。 下载 nvm 首先下载最新版nvm-windows安装。 安装时候需要选择一个nvm安装目录，一个node.js软连接目录。安装过程会自动将这两个目录加入环境变量</description>
+    </item>
+    
+  </channel>
+</rss>

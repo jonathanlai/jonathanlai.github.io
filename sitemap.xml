@@ -2,78 +2,68 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://huanyuan.mobi/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/image-test/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/Github/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/Github/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/Hugo/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/themes/</loc>
-    <lastmod>2020-08-14T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/post/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/post/2022-03-19-1-utterances%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/</loc>
+    <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/Chocolatey/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/Hugo/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/Node.js/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/Node.js/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/nvm/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/privacy/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/tags/Windows/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/rich-content/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/Windows/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/shortcodes/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/post/2022-03-18-2-Windows%E7%B3%BB%E7%BB%9FHugo%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/math-typesetting/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/post/2022-03-18-3-%E9%80%9A%E8%BF%87nvm%E5%AE%89%E8%A3%85Node.js/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/about/</loc>
+    <lastmod>2022-03-18T00:00:08+00:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
+    <loc>https://www.hunayuan.mobi/archives/</loc>
   </url><url>
-    <loc>https://huanyuan.mobi/about/</loc>
-    <lastmod>2019-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/archives/2019/03/</loc>
-  </url><url>
-    <loc>https://huanyuan.mobi/archives/2020/08/</loc>
-  </url><url>
-    <loc>https://huanyuan.mobi/archives/</loc>
-  </url><url>
-    <loc>https://huanyuan.mobi/contact/</loc>
+    <loc>https://www.hunayuan.mobi/search/</loc>
   </url>
 </urlset>

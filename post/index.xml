@@ -1,64 +1,46 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Huan Blog</title>
-    <link>https://huanyuan.mobi/post/</link>
-    <description>Recent content in Posts on Huan Blog</description>
+    <title>Posts on 幻猿 的博客</title>
+    <link>https://www.hunayuan.mobi/post/</link>
+    <description>Recent content in Posts on 幻猿 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 14 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://huanyuan.mobi/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-CN</language>
+    <lastBuildDate>Sat, 19 Mar 2022 13:20:00 +0800</lastBuildDate><atom:link href="https://www.hunayuan.mobi/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Image Test</title>
-      <link>https://huanyuan.mobi/post/image-test/</link>
-      <pubDate>Fri, 14 Aug 2020 00:00:00 +0000</pubDate>
+      <title>utterances 评论系统使用</title>
+      <link>https://www.hunayuan.mobi/post/2022-03-19-1-utterances%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/post/image-test/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris fringilla dui eu mi iaculis, sit amet congue lacus porta. Ut nec porta ex. Morbi nec massa sodales, finibus urna et, condimentum odio. Nulla ornare est ac egestas varius. Duis faucibus sapien non risus pretium vestibulum. Ut rutrum lorem ut euismod maximus. Vestibulum metus urna, ultrices nec sapien sit amet, malesuada tincidunt quam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</description>
+      <guid>https://www.hunayuan.mobi/post/2022-03-19-1-utterances%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F%E4%BD%BF%E7%94%A8/</guid>
+      <description>关于 utterances utterances 是一款基于 GitHub issues 的评论工具。 官网地址 github地址 utterances应用程序地址 安装 utterances 首先要安装utterances，访问 utterances应用程序地址，然后点击install按钮安装。 安装过程中选择关联的存储库，默认是选择所有库，这里建议选择单个库。 Hugo 配置 在conf</description>
     </item>
     
     <item>
-      <title>Markdown Syntax Guide</title>
-      <link>https://huanyuan.mobi/post/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Windows包管理器Chocolatey安装</title>
+      <link>https://www.hunayuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/post/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
+      <guid>https://www.hunayuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/</guid>
+      <description>Chocolatey是windows下的软件包管理工具，使用chocolatey可以快速的安装软件。 以管理员权限运行cmd或者powershell。 cmd运行： @&amp;#34;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&amp;#34; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &amp;#34;iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;))&amp;#34; &amp;amp;&amp;amp; SET &amp;#34;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&amp;#34; powershell运行： Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;)) 安装完成，运行choco 或 choco -?检查一下是否安装正确</description>
     </item>
     
     <item>
-      <title>Rich Content</title>
-      <link>https://huanyuan.mobi/post/rich-content/</link>
-      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      <title>Windows系统Hugo安装</title>
+      <link>https://www.hunayuan.mobi/post/2022-03-18-2-Windows%E7%B3%BB%E7%BB%9FHugo%E5%AE%89%E8%A3%85/</link>
+      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/post/rich-content/</guid>
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+      <guid>https://www.hunayuan.mobi/post/2022-03-18-2-Windows%E7%B3%BB%E7%BB%9FHugo%E5%AE%89%E8%A3%85/</guid>
+      <description>Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。 Hugo安装 如果你是macOS用户，请使用Homebrew快速安装 brew install hugo 如果你是Windows用户，请使用Chocolatey或者Scoop快速安装，取决于你使用什么包管理. # chocolatey choco install hugo -confirm #</description>
     </item>
     
     <item>
-      <title>Placeholder Text</title>
-      <link>https://huanyuan.mobi/post/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      <title>通过nvm安装Node.js</title>
+      <link>https://www.hunayuan.mobi/post/2022-03-18-3-%E9%80%9A%E8%BF%87nvm%E5%AE%89%E8%A3%85Node.js/</link>
+      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/post/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Math Typesetting</title>
-      <link>https://huanyuan.mobi/post/math-typesetting/</link>
-      <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://huanyuan.mobi/post/math-typesetting/</guid>
-      <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>https://huanyuan.mobi/post/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://huanyuan.mobi/post/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
+      <guid>https://www.hunayuan.mobi/post/2022-03-18-3-%E9%80%9A%E8%BF%87nvm%E5%AE%89%E8%A3%85Node.js/</guid>
+      <description>有段时间没有使用node.js了，今天发现电脑上环境已经破坏，那就只能重安装了。 前提 安装前先将本地已有的node.js卸载干净。 下载 nvm 首先下载最新版nvm-windows安装。 安装时候需要选择一个nvm安装目录，一个node.js软连接目录。安装过程会自动将这两个目录加入环境变量</description>
     </item>
     
   </channel>
