@@ -9,21 +9,24 @@
     <meta name="referrer" content="no-referrer-when-downgrade">
     
 
-    <title>Posts | 幻猿 的博客</title>
-    <meta property="og:title" content="Posts - 幻猿 的博客">
+    <title>utterances 评论系统使用 | 幻猿 的博客</title>
+    <meta property="og:title" content="utterances 评论系统使用 - 幻猿 的博客">
     <meta property="og:type" content="article">
         
+    <meta property="article:published_time" content='2022-03-19T13:20:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-03-19T13:20:00&#43;08:00'>
         
     <meta name="Keywords" content="幻猿,程序员o幻猿,Java,Node.js,Flutter,Python,博客,项目管理,软件架构,小程序">
-    <meta name="description" content="Posts">
+    <meta name="description" content="utterances 评论系统使用">
         
     <meta name="author" content="程序员o幻猿">
-    <meta property="og:url" content="https://www.hunayuan.mobi/post/">
+    <meta property="og:url" content="https://www.hunayuan.mobi/post/using-utterances/">
     <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
 
     <link rel="stylesheet" href='/css/normalize.css'>
     <link rel="stylesheet" href='/css/style.css'>
-    <link rel="alternate" type="application/rss+xml" href="https://www.hunayuan.mobi/post/index.xml" title="幻猿 的博客" />
     <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     
@@ -71,13 +74,113 @@
                 <div class="col-8" id="main">
                     
 <div class="res-cons">
-    
-    
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#关于-utterances">关于 utterances</a></li>
+    <li><a href="#安装-utterances">安装 utterances</a></li>
+    <li><a href="#hugo-配置">Hugo 配置</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
     <article class="post">
         <header>
-            <h1 class="post-title">
-                <a href="https://www.hunayuan.mobi/post/using-utterances/" title="utterances 评论系统使用">utterances 评论系统使用</a>
-            </h1>
+            <h1 class="post-title">utterances 评论系统使用</h1>
         </header>
         <date class="post-meta meta-date">
             2022年3月19日
@@ -90,96 +193,104 @@
             
         </div>
         
-        <div class="post-content">
-            关于 utterances utterances 是一款基于 GitHub issues 的评论工具。 官网地址 github地址 utterances应用程序地址 安装 utterances 首先要安装utterances，访问 utterances应用程序地址，然后点击install按钮安装。 安装过程中选择关联的存储库，默认是选择所有库，这里建议选择单个库。 Hugo 配置 在conf……
-        </div>
-        <p class="readmore"><a href="https://www.hunayuan.mobi/post/using-utterances/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.hunayuan.mobi/post/install-nodejs-by-nvm/" title="通过nvm安装Node.js">通过nvm安装Node.js</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2022年3月18日
-        </date>
         
         <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Node.js'>Node.js</a></span>
-            
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
         </div>
         
         <div class="post-content">
-            有段时间没有使用node.js了，今天发现电脑上环境已经破坏，那就只能重安装了。 前提 安装前先将本地已有的node.js卸载干净。 下载 nvm 首先下载最新版nvm-windows安装。 安装时候需要选择一个nvm安装目录，一个node.js软连接目录。安装过程会自动将这两个目录加入环境变量……
+            <h2 id="关于-utterances">关于 utterances</h2>
+<p>utterances 是一款基于 GitHub issues 的评论工具。</p>
+<ul>
+<li><a href="https://utteranc.es/">官网地址</a></li>
+<li><a href="https://github.com/utterance">github地址</a></li>
+<li><a href="https://github.com/apps/utterances">utterances应用程序地址</a></li>
+</ul>
+<h2 id="安装-utterances">安装 utterances</h2>
+<ul>
+<li>首先要安装utterances，访问 <a href="https://github.com/apps/utterances">utterances应用程序地址</a>，然后点击install按钮安装。</li>
+<li>安装过程中选择关联的存储库，默认是选择所有库，这里建议选择单个库。
+
+        <img class="mx-auto" alt="" src="/images/20200929154923.png" />   
+    </li>
+</ul>
+<h2 id="hugo-配置">Hugo 配置</h2>
+<p>在<code>config.toml</code>文件中进行配置：</p>
+<pre tabindex="0"><code>[params.utteranc]
+  enable = true
+  repo = &#34;github-username/github-repository&#34; ##换成自己得
+  issueTerm = &#34;pathname&#34;
+  theme = &#34;github-light&#34;
+</code></pre>
         </div>
-        <p class="readmore"><a href="https://www.hunayuan.mobi/post/install-nodejs-by-nvm/">阅读全文</a></p>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://www.hunayuan.mobi">程序员o幻猿</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://www.hunayuan.mobi/post/using-utterances/">https://www.hunayuan.mobi/post/using-utterances/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/windows-hugo-install/">Windows系统Hugo安装</a></li>
+        
+        <li><a href="/post/windows-package-manager-chocolatey-install/">Windows包管理器Chocolatey安装</a></li>
+        
+        <li><a href="/post/install-nodejs-by-nvm/">通过nvm安装Node.js</a></li>
+        
+        <li><a href="/about/">关于我</a></li>
+        
+        <li><a href="/archives/">归档</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Github'>Github</a></li>
+                
+                <li><a href='/tags/Hugo'>Hugo</a></li>
+                
+            </ul>
+            
+        </div>
     </article>
     
     
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.hunayuan.mobi/post/windows-hugo-install/" title="Windows系统Hugo安装">Windows系统Hugo安装</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2022年3月18日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Hugo'>Hugo</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。 Hugo安装 如果你是macOS用户，请使用Homebrew快速安装 brew install hugo 如果你是Windows用户，请使用Chocolatey或者Scoop快速安装，取决于你使用什么包管理. # chocolatey choco install hugo -confirm #……
-        </div>
-        <p class="readmore"><a href="https://www.hunayuan.mobi/post/windows-hugo-install/">阅读全文</a></p>
-    </article>
-    
-    
-    
-    <article class="post">
-        <header>
-            <h1 class="post-title">
-                <a href="https://www.hunayuan.mobi/post/windows-package-manager-chocolatey-install/" title="Windows包管理器Chocolatey安装">Windows包管理器Chocolatey安装</a>
-            </h1>
-        </header>
-        <date class="post-meta meta-date">
-            2022年3月18日
-        </date>
-        
-        <div class="post-meta">
-            <span>|</span>
-            
-            <span class="meta-category"><a href='/categories/Windows'>Windows</a></span>
-            
-            <span class="meta-category"><a href='/categories/%E5%8C%85%E7%AE%A1%E7%90%86'>包管理</a></span>
-            
-        </div>
-        
-        <div class="post-content">
-            Chocolatey是windows下的软件包管理工具，使用chocolatey可以快速的安装软件。 以管理员权限运行cmd或者powershell。 cmd运行： @&#34;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&#34; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &#34;iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;))&#34; &amp;&amp; SET &#34;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&#34; powershell运行： Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&#39;https://chocolatey.org/install.ps1&#39;)) 安装完成，运行choco 或 choco -?检查一下是否安装正确……
-        </div>
-        <p class="readmore"><a href="https://www.hunayuan.mobi/post/windows-package-manager-chocolatey-install/">阅读全文</a></p>
-    </article>
-    
-    
-    
 
-
-
-
-
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "jonathanlai/jonathanlai.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
 </div>
 
                     <footer id="footer">
@@ -200,6 +311,16 @@
 </footer>
 
 
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
 
 <a id="rocket" href="#top"></a>
 <script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>

@@ -9,10 +9,10 @@
     <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://www.hunayuan.mobi/tags/Chocolatey/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows包管理器Chocolatey安装</title>
-      <link>https://www.hunayuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/</link>
+      <link>https://www.hunayuan.mobi/post/windows-package-manager-chocolatey-install/</link>
       <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://www.hunayuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/</guid>
+      <guid>https://www.hunayuan.mobi/post/windows-package-manager-chocolatey-install/</guid>
       <description>Chocolatey是windows下的软件包管理工具，使用chocolatey可以快速的安装软件。 以管理员权限运行cmd或者powershell。 cmd运行： @&amp;#34;%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe&amp;#34; -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command &amp;#34;iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;))&amp;#34; &amp;amp;&amp;amp; SET &amp;#34;PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin&amp;#34; powershell运行： Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString(&amp;#39;https://chocolatey.org/install.ps1&amp;#39;)) 安装完成，运行choco 或 choco -?检查一下是否安装正确</description>
     </item>
     
