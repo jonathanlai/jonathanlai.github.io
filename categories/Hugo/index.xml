@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 幻猿 的博客</title>
-    <link>https://www.hunayuan.mobi/categories/Hugo/</link>
+    <link>https://huanyuan.mobi/categories/Hugo/</link>
     <description>Recent content in Hugo on 幻猿 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://www.hunayuan.mobi/categories/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/categories/Hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Windows系统Hugo安装</title>
-      <link>https://www.hunayuan.mobi/post/windows-hugo-install/</link>
+      <link>https://huanyuan.mobi/post/windows-hugo-install/</link>
       <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://www.hunayuan.mobi/post/windows-hugo-install/</guid>
+      <guid>https://huanyuan.mobi/post/windows-hugo-install/</guid>
       <description>Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。 Hugo安装 如果你是macOS用户，请使用Homebrew快速安装 brew install hugo 如果你是Windows用户，请使用Chocolatey或者Scoop快速安装，取决于你使用什么包管理. # chocolatey choco install hugo -confirm #</description>
     </item>
     

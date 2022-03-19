@@ -2,26 +2,26 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on 幻猿 的博客</title>
-    <link>https://www.hunayuan.mobi/tags/Hugo/</link>
+    <link>https://huanyuan.mobi/tags/Hugo/</link>
     <description>Recent content in Hugo on 幻猿 的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 19 Mar 2022 13:20:00 +0800</lastBuildDate><atom:link href="https://www.hunayuan.mobi/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Mar 2022 13:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/Hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>utterances 评论系统使用</title>
-      <link>https://www.hunayuan.mobi/post/using-utterances/</link>
+      <link>https://huanyuan.mobi/post/using-utterances/</link>
       <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
       
-      <guid>https://www.hunayuan.mobi/post/using-utterances/</guid>
+      <guid>https://huanyuan.mobi/post/using-utterances/</guid>
       <description>关于 utterances utterances 是一款基于 GitHub issues 的评论工具。 官网地址 github地址 utterances应用程序地址 安装 utterances 首先要安装utterances，访问 utterances应用程序地址，然后点击install按钮安装。 安装过程中选择关联的存储库，默认是选择所有库，这里建议选择单个库。 Hugo 配置 在conf</description>
     </item>
     
     <item>
       <title>Windows系统Hugo安装</title>
-      <link>https://www.hunayuan.mobi/post/windows-hugo-install/</link>
+      <link>https://huanyuan.mobi/post/windows-hugo-install/</link>
       <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://www.hunayuan.mobi/post/windows-hugo-install/</guid>
+      <guid>https://huanyuan.mobi/post/windows-hugo-install/</guid>
       <description>Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。 Hugo安装 如果你是macOS用户，请使用Homebrew快速安装 brew install hugo 如果你是Windows用户，请使用Chocolatey或者Scoop快速安装，取决于你使用什么包管理. # chocolatey choco install hugo -confirm #</description>
     </item>
     
