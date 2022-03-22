@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SpringBoot on 幻猿 的博客</title>
+    <link>https://huanyuan.mobi/tags/SpringBoot/</link>
+    <description>Recent content in SpringBoot on 幻猿 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 22 Mar 2022 10:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/SpringBoot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring、SpringMVC和SpringBoot的区别</title>
+      <link>https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</link>
+      <pubDate>Tue, 22 Mar 2022 10:20:00 +0800</pubDate>
+      
+      <guid>https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</guid>
+      <description>基本概念 Spring Spring是一个开源的容器框架，它包含了web层，业务层和持久层的组件，其核心是控制反转(IOC)和面向切面编程(AOP)，并且可以配置各种Bean，并维护Bean之间的关联关系。 SpringMVC SpringMVC是一种web层的MVC开源框架，用于替代servlet处理和响应请求</description>
+    </item>
+    
+    <item>
+      <title>org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</title>
+      <link>https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/</link>
+      <pubDate>Mon, 21 Mar 2022 20:20:00 +0800</pubDate>
+      
+      <guid>https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/</guid>
+      <description>org.springframework.dao.DataIntegrityViolationException: Cannot create namespace MYDB.Test101 in multi-document transaction. 看错误信息，“不能在多文档事务时候创建集合Test101”。 这个是错误使用MongoDB v4.0+，spring-data v2.1+并且使用事务时候才会遇到的。 spring-data从2.1版本开始，对MongoDB 4.0附带的一项新功能，该功能支持多文档事务。该</description>
+    </item>
+    
+  </channel>
+</rss>

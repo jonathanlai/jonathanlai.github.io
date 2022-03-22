@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on 幻猿 的博客</title>
+    <link>https://huanyuan.mobi/tags/Spring/</link>
+    <description>Recent content in Spring on 幻猿 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 22 Mar 2022 10:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/Spring/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring、SpringMVC和SpringBoot的区别</title>
+      <link>https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</link>
+      <pubDate>Tue, 22 Mar 2022 10:20:00 +0800</pubDate>
+      
+      <guid>https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</guid>
+      <description>基本概念 Spring Spring是一个开源的容器框架，它包含了web层，业务层和持久层的组件，其核心是控制反转(IOC)和面向切面编程(AOP)，并且可以配置各种Bean，并维护Bean之间的关联关系。 SpringMVC SpringMVC是一种web层的MVC开源框架，用于替代servlet处理和响应请求</description>
+    </item>
+    
+  </channel>
+</rss>

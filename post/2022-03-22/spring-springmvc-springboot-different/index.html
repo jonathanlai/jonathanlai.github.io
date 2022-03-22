@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+
+    <title>Spring、SpringMVC和SpringBoot的区别 | 幻猿 的博客</title>
+    <meta property="og:title" content="Spring、SpringMVC和SpringBoot的区别 - 幻猿 的博客">
+    <meta property="og:type" content="article">
+        
+    <meta property="article:published_time" content='2022-03-22T10:20:00&#43;08:00'>
+        
+        
+    <meta property="article:modified_time" content='2022-03-22T10:20:00&#43;08:00'>
+        
+    <meta name="Keywords" content="幻猿,程序员o幻猿,Java,Node.js,Flutter,Python,博客,项目管理,软件架构,小程序">
+    <meta name="description" content="Spring、SpringMVC和SpringBoot的区别">
+        
+    <meta name="author" content="程序员o幻猿">
+    <meta property="og:url" content="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/">
+    <link rel="shortcut icon" href='/favicon.ico'  type="image/x-icon">
+
+    <link rel="stylesheet" href='/css/normalize.css'>
+    <link rel="stylesheet" href='/css/style.css'>
+    <script type="text/javascript" src="//cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    
+    
+    
+    
+    
+    
+        <link rel="stylesheet" href='/css/douban.css'>
+    
+        <link rel="stylesheet" href='/css/other.css'>
+    
+</head>
+
+<body>
+    <header id="header" class="clearfix">
+    <div class="container">
+        <div class="col-group">
+            <div class="site-name ">
+                
+                    <a id="logo" href="https://huanyuan.mobi">
+                        幻猿 的博客
+                    </a>
+                
+                <p class="description">专注于Java、Node.js、Flutter、Python、小程序、移动互联网、项目管理、软件架构</p>
+            </div>
+            <div>
+                <nav id="nav-menu" class="clearfix">
+                    <a class="current" href="https://huanyuan.mobi">首页</a>
+                    
+                    <a  href="https://huanyuan.mobi/archives/" title="归档">归档</a>
+                    
+                    <a  href="https://huanyuan.mobi/about/" title="关于">关于</a>
+                    
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <div id="body">
+        <div class="container">
+            <div class="col-group">
+
+                <div class="col-8" id="main">
+                    
+<div class="res-cons">
+    <style type="text/css">
+    .post-toc {
+        position: fixed;
+        width: 200px;
+        margin-left: -210px;
+        padding: 5px 10px;
+        font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+        font-size: 12px;
+        border: 1px solid rgba(0, 0, 0, .07);
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.98);
+        background-clip: padding-box;
+        -webkit-box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        box-shadow: 1px 1px 2px rgba(0, 0, 0, .125);
+        word-wrap: break-word;
+        white-space: nowrap;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        z-index: 999;
+        cursor: pointer;
+        max-height: 70%;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .post-toc .post-toc-title {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .post-toc .post-toc-content {
+        font-size: 15px;
+    }
+
+    .post-toc .post-toc-content>nav>ul {
+        margin: 10px 0;
+    }
+
+    .post-toc .post-toc-content ul {
+        padding-left: 20px;
+        list-style: square;
+        margin: 0.5em;
+        line-height: 1.8em;
+    }
+
+    .post-toc .post-toc-content ul ul {
+        padding-left: 15px;
+        display: none;
+    }
+
+    @media print,
+    screen and (max-width:1057px) {
+        .post-toc {
+            display: none;
+        }
+    }
+</style>
+<div class="post-toc" style="position: absolute; top: 188px;">
+    <h2 class="post-toc-title">文章目录</h2>
+    <div class="post-toc-content">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#spring">Spring</a></li>
+    <li><a href="#springmvc">SpringMVC</a></li>
+    <li><a href="#springboot">SpringBoot</a></li>
+  </ul>
+
+  <ul>
+    <li><a href="#spring原理和组成">Spring原理和组成</a></li>
+    <li><a href="#springmvc原理">SpringMVC原理</a></li>
+    <li><a href="#springboot原理">SpringBoot原理</a></li>
+  </ul>
+</nav>
+    </div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var postToc = $(".post-toc");
+        if (postToc.length) {
+            var leftPos = $("#main").offset().left;
+            if (leftPos < 220) {
+                postToc.css({ "width": leftPos - 10, "margin-left": (0 - leftPos) })
+            }
+
+            var t = postToc.offset().top - 20,
+                a = {
+                    start: {
+                        position: "absolute",
+                        top: t
+                    },
+                    process: {
+                        position: "fixed",
+                        top: 20
+                    },
+                };
+            $(window).scroll(function () {
+                var e = $(window).scrollTop();
+                e < t ? postToc.css(a.start) : postToc.css(a.process)
+            })
+        }
+
+        if ($("#TableOfContents").children().length < 1) {
+            $(".post-toc").remove();
+        }
+    })
+</script>
+    <article class="post">
+        <header>
+            <h1 class="post-title">Spring、SpringMVC和SpringBoot的区别</h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年3月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+            <span class="meta-category"><a href='/categories/SpringBoot'>SpringBoot</a></span>
+            
+        </div>
+        
+        
+        <div class="post-meta">
+            <span id="busuanzi_container_page_pv">|<span id="busuanzi_value_page_pv"></span><span>
+                    阅读</span></span>
+        </div>
+        
+        
+        <div class="clear" style="display: none">
+            <div class="toc-article">
+                <div class="toc-title">文章目录</div>
+            </div>
+        </div>
+        
+        <div class="post-content">
+            <h1 id="基本概念">基本概念</h1>
+<h2 id="spring">Spring</h2>
+<p>Spring是一个开源的容器框架，它包含了web层，业务层和持久层的组件，其核心是控制反转(IOC)和面向切面编程(AOP)，并且可以配置各种Bean，并维护Bean之间的关联关系。</p>
+<h2 id="springmvc">SpringMVC</h2>
+<p>SpringMVC是一种web层的MVC开源框架，用于替代servlet处理和响应请求，简化web层的开发。</p>
+<h2 id="springboot">SpringBoot</h2>
+<p>SpringBoot是一个微服务框架，是在Spring基础上做了一些扩展，简化了应用的开发和部署。</p>
+<p>SpringBoot是为了简化Spring应用的创建、运行、调试和部署等而出现的，使用它可以做到专注于Spring应用的开发。</p>
+<p>SpringBoot通过注解简化了Spring中的xml配置。</p>
+<h1 id="更具体的">更具体的</h1>
+<h2 id="spring原理和组成">Spring原理和组成</h2>
+<p>Spring框架封装了一系列的功能组件模块，包括SpringJDBC，SpringMVC，SpringTest，SpringSecurity，SpringAOP，SpringORM等等。大体如下图：</p>
+<p>
+        <img class="mx-auto" alt="Spring框架结构图" src="assets/321548645821.jpeg" />   
+    </p>
+<h2 id="springmvc原理">SpringMVC原理</h2>
+<p>MVC主要包含模型（Model），视图（View）和控制器（Controller），像早期的Struts框架也是基于MVC模型设计的web层框架。SpringMVC的原理如下图：</p>
+<p>
+        <img class="mx-auto" alt="SpringMVC的原理" src="assets/20200920140021102.jpg" />   
+    </p>
+<h2 id="springboot原理">SpringBoot原理</h2>
+<p>SpringBoot是在Spring框架基础上做了一些扩展，消除了设置Spring应用程序需要的XML配置，简化了Spring应用生态的开发、部署和管理。具体如下图：</p>
+<p>
+        <img class="mx-auto" alt="SpringBoot模块图" src="assets/v2-a74c247d2b123f2c2141d343bc19fcb2_1440w.jpg" />   
+    </p>
+<h1 id="结论">结论</h1>
+<p>简单来说就是Spring包含SpringMVC，而SpringBoot是在Spring基础上做了一些扩展，使他更符合微服务架构模式的开发、管理。</p>
+
+        </div>
+
+        
+<div class="post-archive">
+    <ul class="post-copyright">
+        <li><strong>原文作者：</strong><a rel="author" href="https://huanyuan.mobi">程序员o幻猿</a></li>
+        <li style="word-break:break-all"><strong>原文链接：</strong><a href="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/">https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</a></li>
+        <li><strong>版权声明：</strong>本作品采用<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/">知识共享署名-非商业性使用-禁止演绎 4.0 国际许可协议</a>进行许可，非商业转载请注明出处（作者，原文链接），商业转载请联系作者获得授权。</li>
+    </ul>
+</div>
+<br/>
+
+
+
+        
+
+<div class="post-archive">
+    <h2>See Also</h2>
+    <ul class="listing">
+        
+        <li><a href="/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/">org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</a></li>
+        
+        <li><a href="/post/using-utterances/">utterances 评论系统使用</a></li>
+        
+        <li><a href="/post/windows-package-manager-chocolatey-install/">Windows包管理器Chocolatey安装</a></li>
+        
+        <li><a href="/post/windows-hugo-install/">Windows系统Hugo安装</a></li>
+        
+        <li><a href="/post/install-nodejs-by-nvm/">通过nvm安装Node.js</a></li>
+        
+    </ul>
+</div>
+
+
+        <div class="post-meta meta-tags">
+            
+            <ul class="clearfix">
+                
+                <li><a href='/tags/Java'>Java</a></li>
+                
+                <li><a href='/tags/Spring'>Spring</a></li>
+                
+                <li><a href='/tags/SpringBoot'>SpringBoot</a></li>
+                
+            </ul>
+            
+        </div>
+    </article>
+    
+    
+
+    
+    
+    <div class="post bg-white">
+      <script src="https://utteranc.es/client.js"
+            repo= "jonathanlai/jonathanlai.github.io"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+      </script>
+    </div>
+    
+</div>
+
+                    <footer id="footer">
+    <div>
+        &copy; 2022 <a href="https://huanyuan.mobi">幻猿 的博客 By 程序员o幻猿</a>
+        
+    </div>
+    <br />
+    <div>
+        <div class="github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+        </div>
+        
+        <div class="github-badge">
+            <a href="https://github.com/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-yellowgreen">Github</span></a>
+        </div>
+    </div>
+</footer>
+
+
+    
+    <script type="text/javascript">
+        window.MathJax = {
+            tex2jax: {
+                inlineMath: [['$', '$']],
+                processEscapes: true
+                }
+            };
+    </script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+
+<a id="rocket" href="#top"></a>
+<script type="text/javascript" src='/js/totop.js?v=0.0.0' async=""></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'G-0GBY2PNEKY', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+    <script type="text/javascript" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
+
+
+
+
+    <script src='/js/douban.js'></script>
+
+                </div>
+
+                <div id="secondary">
+    <section class="widget">
+        <form id="search" action='https://huanyuan.mobi/search/' method="get" accept-charset="utf-8" target="_blank" _lpchecked="1">
+      
+      <input type="text" name="q" maxlength="20" placeholder="Search">
+      <input type="hidden" name="sitesearch" value="https://huanyuan.mobi">
+      <button type="submit" class="submit icon-search"></button>
+</form>
+    </section>
+    
+    <section class="widget">
+        <h3 class="widget-title">最近文章</h3>
+<ul class="widget-list">
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/2022-03-22/java-application-high-cpu-troubleshooting/" title="Java应用高CPU排查">Java应用高CPU排查</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/" title="Spring、SpringMVC和SpringBoot的区别">Spring、SpringMVC和SpringBoot的区别</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/" title="org.springframework.dao.DataIntegrityViolationException: Cannot create namespace">org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/using-utterances/" title="utterances 评论系统使用">utterances 评论系统使用</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/windows-package-manager-chocolatey-install/" title="Windows包管理器Chocolatey安装">Windows包管理器Chocolatey安装</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/windows-hugo-install/" title="Windows系统Hugo安装">Windows系统Hugo安装</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/install-nodejs-by-nvm/" title="通过nvm安装Node.js">通过nvm安装Node.js</a>
+    </li>
+    
+</ul>
+    </section>
+
+    
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/categories/'>分类</a></h3>
+<ul class="widget-list">
+    
+    <li><a href="https://huanyuan.mobi/categories/Github/">Github (1)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/Hugo/">Hugo (1)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/Java/">Java (3)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/Node.js/">Node.js (1)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/SpringBoot/">SpringBoot (2)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/Windows/">Windows (1)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/">包管理 (1)</a></li>
+    
+</ul>
+    </section>
+
+    <section class="widget">
+        <h3 class="widget-title"><a href='/tags/'>标签</a></h3>
+<div class="tagcloud">
+    
+    <a href="https://huanyuan.mobi/tags/Chocolatey/">Chocolatey</a>
+    
+    <a href="https://huanyuan.mobi/tags/Github/">Github</a>
+    
+    <a href="https://huanyuan.mobi/tags/Hugo/">Hugo</a>
+    
+    <a href="https://huanyuan.mobi/tags/Java/">Java</a>
+    
+    <a href="https://huanyuan.mobi/tags/MongoDB/">MongoDB</a>
+    
+    <a href="https://huanyuan.mobi/tags/Node.js/">Node.js</a>
+    
+    <a href="https://huanyuan.mobi/tags/Spring/">Spring</a>
+    
+    <a href="https://huanyuan.mobi/tags/SpringBoot/">SpringBoot</a>
+    
+    <a href="https://huanyuan.mobi/tags/Windows/">Windows</a>
+    
+    <a href="https://huanyuan.mobi/tags/nvm/">nvm</a>
+    
+</div>
+    </section>
+
+    
+<section class="widget">
+    <h3 class="widget-title">友情链接</h3>
+    <ul class="widget-list">
+        
+        <li>
+            <a target="_blank" href="https://gohugo.io/" title="Hugo官网">Hugo官网</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://github.com/flysnow-org/maupassant-hugo" title="maupassant主题">maupassant主题</a>
+        </li>
+        
+        <li>
+            <a target="_blank" href="https://www.toutiao.com/c/user/token/MS4wLjABAAAAjwOw3iTDkyC5PjQCXm4jrq-qqd22Po-iWYQJncOONVs/?" title="幻猿-头条号">幻猿-头条号</a>
+        </li>
+        
+    </ul>
+</section>
+
+
+    <section class="widget">
+        <h3 class="widget-title">其它</h3>
+        <ul class="widget-list">
+            <li><a href="https://huanyuan.mobi/index.xml">文章 RSS</a></li>
+        </ul>
+    </section>
+</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

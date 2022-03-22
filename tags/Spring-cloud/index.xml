@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Cloud on 幻猿 的博客</title>
+    <link>https://huanyuan.mobi/tags/Spring-Cloud/</link>
+    <description>Recent content in Spring Cloud on 幻猿 的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 20 Mar 2022 18:00:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/Spring-Cloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Cloud入门教程(01)</title>
+      <link>https://huanyuan.mobi/post/2022-03-20/Spring-Cloud-Getting-Started-Tutorial-01/</link>
+      <pubDate>Sun, 20 Mar 2022 18:00:00 +0800</pubDate>
+      
+      <guid>https://huanyuan.mobi/post/2022-03-20/Spring-Cloud-Getting-Started-Tutorial-01/</guid>
+      <description>spring cloud是一套微服务治理框架。</description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud入门教程(02)</title>
+      <link>https://huanyuan.mobi/post/2022-03-20/Spring-Cloud-Getting-Started-Tutorial-02/</link>
+      <pubDate>Sun, 20 Mar 2022 18:00:00 +0800</pubDate>
+      
+      <guid>https://huanyuan.mobi/post/2022-03-20/Spring-Cloud-Getting-Started-Tutorial-02/</guid>
+      <description>spring cloud是一套微服务治理框架2222222222222222。</description>
+    </item>
+    
+  </channel>
+</rss>

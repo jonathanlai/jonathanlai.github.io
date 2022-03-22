@@ -74,6 +74,79 @@
     <article class="post">
         <header>
             <h1 class="post-title">
+                <a href="https://huanyuan.mobi/post/2022-03-22/java-application-high-cpu-troubleshooting/" title="Java应用高CPU排查">Java应用高CPU排查</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年3月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            1、命令top查看高CPU应用的PID(进程ID)。 2、命令ps查询线程ID，awk处理数据，并将TID(线程ID)转换成16进制展示 1 ps -mp pid -o THREAD,tid,time | awk &#39;$2 &gt; 30 {printf(&#34;%s \t %x\n&#34;,$0,$8)}&#39; 命令中的30表示CPU使用率超过30%。 3、命令jstack查询高CPU线程栈。 1 jstask PID |grep -A 30 TID PID是第一步查询到的高……
+        </div>
+        <p class="readmore"><a href="https://huanyuan.mobi/post/2022-03-22/java-application-high-cpu-troubleshooting/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/" title="Spring、SpringMVC和SpringBoot的区别">Spring、SpringMVC和SpringBoot的区别</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年3月22日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+            <span class="meta-category"><a href='/categories/SpringBoot'>SpringBoot</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            基本概念 Spring Spring是一个开源的容器框架，它包含了web层，业务层和持久层的组件，其核心是控制反转(IOC)和面向切面编程(AOP)，并且可以配置各种Bean，并维护Bean之间的关联关系。 SpringMVC SpringMVC是一种web层的MVC开源框架，用于替代servlet处理和响应请求……
+        </div>
+        <p class="readmore"><a href="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
+                <a href="https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/" title="org.springframework.dao.DataIntegrityViolationException: Cannot create namespace">org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</a>
+            </h1>
+        </header>
+        <date class="post-meta meta-date">
+            2022年3月21日
+        </date>
+        
+        <div class="post-meta">
+            <span>|</span>
+            
+            <span class="meta-category"><a href='/categories/Java'>Java</a></span>
+            
+            <span class="meta-category"><a href='/categories/SpringBoot'>SpringBoot</a></span>
+            
+        </div>
+        
+        <div class="post-content">
+            org.springframework.dao.DataIntegrityViolationException: Cannot create namespace MYDB.Test101 in multi-document transaction. 看错误信息，“不能在多文档事务时候创建集合Test101”。 这个是错误使用MongoDB v4.0+，spring-data v2.1+并且使用事务时候才会遇到的。 spring-data从2.1版本开始，对MongoDB 4.0附带的一项新功能，该功能支持多文档事务。该……
+        </div>
+        <p class="readmore"><a href="https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/">阅读全文</a></p>
+    </article>
+    
+    <article class="post">
+        <header>
+            <h1 class="post-title">
                 <a href="https://huanyuan.mobi/post/using-utterances/" title="utterances 评论系统使用">utterances 评论系统使用</a>
             </h1>
         </header>
@@ -232,6 +305,18 @@ if (!doNotTrack) {
 <ul class="widget-list">
     
     <li>
+        <a href="https://huanyuan.mobi/post/2022-03-22/java-application-high-cpu-troubleshooting/" title="Java应用高CPU排查">Java应用高CPU排查</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/" title="Spring、SpringMVC和SpringBoot的区别">Spring、SpringMVC和SpringBoot的区别</a>
+    </li>
+    
+    <li>
+        <a href="https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/" title="org.springframework.dao.DataIntegrityViolationException: Cannot create namespace">org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</a>
+    </li>
+    
+    <li>
         <a href="https://huanyuan.mobi/post/using-utterances/" title="utterances 评论系统使用">utterances 评论系统使用</a>
     </li>
     
@@ -260,7 +345,11 @@ if (!doNotTrack) {
     
     <li><a href="https://huanyuan.mobi/categories/Hugo/">Hugo (1)</a></li>
     
+    <li><a href="https://huanyuan.mobi/categories/Java/">Java (3)</a></li>
+    
     <li><a href="https://huanyuan.mobi/categories/Node.js/">Node.js (1)</a></li>
+    
+    <li><a href="https://huanyuan.mobi/categories/SpringBoot/">SpringBoot (2)</a></li>
     
     <li><a href="https://huanyuan.mobi/categories/Windows/">Windows (1)</a></li>
     
@@ -279,7 +368,15 @@ if (!doNotTrack) {
     
     <a href="https://huanyuan.mobi/tags/Hugo/">Hugo</a>
     
+    <a href="https://huanyuan.mobi/tags/Java/">Java</a>
+    
+    <a href="https://huanyuan.mobi/tags/MongoDB/">MongoDB</a>
+    
     <a href="https://huanyuan.mobi/tags/Node.js/">Node.js</a>
+    
+    <a href="https://huanyuan.mobi/tags/Spring/">Spring</a>
+    
+    <a href="https://huanyuan.mobi/tags/SpringBoot/">SpringBoot</a>
     
     <a href="https://huanyuan.mobi/tags/Windows/">Windows</a>
     
