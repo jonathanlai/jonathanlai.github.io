@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Node.js on 幻猿 的博客</title>
-    <link>https://huanyuan.mobi/tags/Node.js/</link>
-    <description>Recent content in Node.js on 幻猿 的博客</description>
+    <title>Node.js on huanyuan.mobi</title>
+    <link>https://blog.huanyuan.mobi/tags/node.js/</link>
+    <description>Recent content in Node.js on huanyuan.mobi</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/Node.js/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</copyright>
+    <lastBuildDate>Fri, 18 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/tags/node.js/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>通过nvm安装Node.js</title>
-      <link>https://huanyuan.mobi/post/install-nodejs-by-nvm/</link>
+      <link>https://blog.huanyuan.mobi/posts/2022-03/install-nodejs-by-nvm/</link>
       <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/post/install-nodejs-by-nvm/</guid>
-      <description>有段时间没有使用node.js了，今天发现电脑上环境已经破坏，那就只能重安装了。 前提 安装前先将本地已有的node.js卸载干净。 下载 nvm 首先下载最新版nvm-windows安装。 安装时候需要选择一个nvm安装目录，一个node.js软连接目录。安装过程会自动将这两个目录加入环境变量</description>
+      <guid>https://blog.huanyuan.mobi/posts/2022-03/install-nodejs-by-nvm/</guid>
+      <description> 有段时间没有使用node.js了，今天发现电脑上环境已经破坏，那就只能重安装了。
+ 前提 安装前先将本地已有的node.js卸载干净。
+下载 nvm 首先下载最新版nvm-windows安装。
+安装时候需要选择一个nvm安装目录，一个node.js软连接目录。安装过程会自动将这两个目录加入环境变量。
+安装完成之后打开terminal输入命令查看： nvm version 安装 node.js 网上查看最新版本（当前是v16.14.2），直接安装命令
+# 先查看是否已经安装，如果有，直接use即可nvm use 16.14.2# 如果没有安装，使用install命令安装nvm install 16.14.2 等待安装完成。
+安装完成执行命令：
+nvm use 16.14.2 报错，并且乱码！！
+查询状态码1，说是权限不够，重新开个administrator权限的powershell执行就可以了！
+最后查看node.js版本：
+node --version </description>
     </item>
     
   </channel>

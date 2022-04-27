@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Windows系统Hugo安装 | huanyuan.mobi</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+
+    <link href="https://blog.huanyuan.mobi/css/style.css" rel="stylesheet">
+   
+</head><body><header><nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://blog.huanyuan.mobi/">HUANYUAN.MOBI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://blog.huanyuan.mobi/">首页</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">编程语言</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/java">Java</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">编程技术</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/android">Android</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+</nav>  
+</header><div id="content">
+<main class="container" >
+    <div class="row g-5">
+        <div class="col-md-8">
+            <article class="blog-post" style="padding-top: 2rem;">
+                <h2 class="blog-post-title">Windows系统Hugo安装</h2>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-18&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/hugo/'>hugo</a>
+                    </small>
+                </div>
+                <blockquote>
+<p>Hugo是一个用Go编写的静态站点生成器，由于具有丰富的主题资源和惊人的生成速度而备受青睐。</p>
+</blockquote>
+<h2 id="hugo安装">Hugo安装</h2>
+<p>如果你是macOS用户，请使用Homebrew快速安装</p>
+<pre tabindex="0"><code>brew install hugo
+</code></pre><p>如果你是Windows用户，请使用<a href="https://huanyuan.mobi/post/2022-03-18-1-Windows%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8Chocolatey%E5%AE%89%E8%A3%85/">Chocolatey</a>或者Scoop快速安装，取决于你使用什么包管理.</p>
+<pre tabindex="0"><code># chocolatey
+choco install hugo -confirm
+# scoop
+scoop install hugo
+</code></pre><p>如果你是Debian或Ubuntu用户，请使用apt快速安装。</p>
+<pre tabindex="0"><code>sudo apt-get install hugo
+</code></pre><p>基本上使用单行命令都可以成功安装Hugo。</p>
+<h2 id="创建hugo网站">创建Hugo网站</h2>
+<p>Hugo创建网站：
+<img src="assets/20220318124901.png" alt=""></p>
+<p>进去后目录结构如下：
+<img src="assets/20220318124934.png" alt=""></p>
+<h2 id="vscode和插件">vscode和插件</h2>
+<p>vscode安装插件 <code>Hugofy</code>、<code>Hugo Helper</code>、<code>Hugo Language and Syntax Support</code>，然后使用vscode打开刚刚创建Hugo项目。</p>
+<h2 id="加入主题">加入主题</h2>
+<p>Hugo有很多主题，可以去 <a href="https://themes.gohugo.io/">官网</a> 查询使用。</p>
+<blockquote>
+<p>我这里使用<a href="https://github.com/opera7133/Blonde">Blonde</a>。Blonde使用Node.js开发，所以会用到一点Node.js相关知识。</p>
+</blockquote>
+<p>关于Theme的使用有很多种方法，可以网上自行查询使用，我这里为了方便，就直接通过<code>git clone</code>的方式，将主题直接<code>clone</code>到本地。</p>
+<pre tabindex="0"><code>git clone https://github.com/opera7133/Blonde.git themes/Blonde
+</code></pre><p><img src="assets/Snipaste_2022-03-19_19-41-25.png" alt=""></p>
+<p>然后将<code>themes/Blonde/exampleSite</code>目录下的所有文件拷贝到我们项目根目录下。</p>
+<p>修改下<code>content/post/rich-content.md</code>文件，将<strong>15行</strong>以后的注释或者直接删除(这里的内容由于网络原因访问不到)。</p>
+<p>Blonde主题采用Node.js开发，所以需要安装下依赖包。在项目根目录下执行<code>npm install</code>，安装主题相关包。
+<img src="assets/Snipaste_2022-03-19_19-53-31.png" alt=""></p>
+<p>执行命令<code>hugo server -D</code>启动hugo服务，默认端口1313(需要保证端口可用)。
+<img src="assets/Snipaste_2022-03-19_19-57-14.png" alt=""></p>
+<p>访问<code>http://localhost:1313</code>。
+<img src="assets/Snipaste_2022-03-19_19-56-27.png" alt=""></p>
+<p>到这里，一个简单的Hugo博客网站就出来了，至于具体的博客内容编辑，只需要拷贝一份<code>content/post</code>下的任意文章，然后修改里边的内容即可。内容都是Markdown格式的，很容易编辑的。</p>
+
+            </article>
+        </div>
+        <div class="col-md-4">
+            
+            <div class="position-sticky" style="top: 4.5rem;">
+                <h4 style="text-align: center;">TOC</h4>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hugo安装">Hugo安装</a></li>
+    <li><a href="#创建hugo网站">创建Hugo网站</a></li>
+    <li><a href="#vscode和插件">vscode和插件</a></li>
+    <li><a href="#加入主题">加入主题</a></li>
+  </ul>
+</nav>
+            </div>
+            </div>
+    </div>
+</main>
+
+        </div><footer class="site-footer mt-auto footer d-print-none">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xl-3"><h5>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</h5>
+
+<p>如若转载，请标明作者和出处，本站点作品采用<a href='https://creativecommons.org/licenses/by/4.0/' target='blank'> 署名 4.0 国际 (CC BY 4.0) </a>协议进行许可。</p></div>
+            <div class="col-md-4 col-xl-3"><h5>免责声明</h5>
+这里表达的观点是我个人的观点，不能代表我工作的公司、同事以及身边的人的观点。</div>
+            <div class="col-md-4 col-xl-3"><h5>关于网站</h5>
+这个网站是我个人博客站点，分享一些自己平时工作生活中遇到或者学习的内容，
+基于<a href="https://gohugo.io/"><b> Hugo </b></a>搭建，使用的自己创建的主题，
+暂定名称<b> HUANYUAN-BLOG </b>，暂时还没有发布，等后续完善再开源发布。</div>
+        </div>
+
+        <hr />
+
+        <div class="d-flex justify-content-center icons"><a class="py-2 px-2" href="https://twitter.com/Jonnlai85"><i class="fab fa-twitter"></i></a>
+<a class="py-2 px-2" href="https://instagram.com/jonathanlai8511"><i class="fab fa-instagram"></i></a>
+
+
+<a class="py-2 px-2" href='https://blog.huanyuan.mobi/index.xml'><i class="fas fa-rss"></i></a>
+</div>
+
+        <div class="d-flex justify-content-center github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+            &nbsp;&nbsp;
+            <a href="https://github.com/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-yellowgreen">Github</span></a>
+        </div>
+    </div>
+</footer></body>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+   
+$((function(){
+ 
+    $(".blog-post img").addClass("img-fluid");
+ 
+}));
+</script>
+</html>

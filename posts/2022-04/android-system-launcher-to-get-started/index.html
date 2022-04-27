@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>Android系统Launcher上手 | huanyuan.mobi</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+
+    <link href="https://blog.huanyuan.mobi/css/style.css" rel="stylesheet">
+   
+</head><body><header><nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://blog.huanyuan.mobi/">HUANYUAN.MOBI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://blog.huanyuan.mobi/">首页</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">编程语言</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/java">Java</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">编程技术</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/android">Android</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+</nav>  
+</header><div id="content">
+<main class="container" >
+    <div class="row g-5">
+        <div class="col-md-8">
+            <article class="blog-post" style="padding-top: 2rem;">
+                <h2 class="blog-post-title">Android系统Launcher上手</h2>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-04-20&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/android/'>android</a>
+                    </small>
+                </div>
+                <h1 id="关于launcher">关于Launcher</h1>
+<p>Launcher是安卓系统中的桌面启动器，安卓系统的桌面UI统称为Launcher。
+Launcher是安卓系统中的主要程序组件之一，安卓系统中如果没有Launcher就无法启动安卓桌面。
+那么你如果想要自定义一个安卓桌面，那么就需要修改调整这部分内容。</p>
+<h1 id="launcher上手">Launcher上手</h1>
+<p>下面我就通过一个简单的UI(<a href="%5Bhttps://www.android--code.com/2018/03/android-kotlin-gridview-with.html">UI源码</a>）界面来演示怎么自定义<code>Launcher Activity</code>&mdash;-自定义桌面。</p>
+<h2 id="新建项目">新建项目</h2>
+<p>Android Studio新建一个安卓项目。</p>
+<p><img src="assets/image-20220419175243504.png" alt="image-20220419175243504"></p>
+<p>选择<code>Empty Activity</code>，然后<code>Next</code>。
+<img src="assets/image-20220419175436461.png" alt="image-20220419175436461"></p>
+<p>然后<code>Finish</code>完成项目创建。等初始化完成，项目结构如下：</p>
+<p><img src="assets/image-20220419141057712.png" alt="image-20220419141057712"></p>
+<h2 id="修改manifest">修改Manifest</h2>
+<p>在<code>MainActivity</code>的<code>intent-filter</code>标签内添加下边两行代码：</p>
+<pre tabindex="0"><code>&lt;category android:name=&#34;android.intent.category.HOME&#34; /&gt;
+&lt;category android:name=&#34;android.intent.category.DEFAULT&#34; /&gt;
+</code></pre><h2 id="修改activity_mainxml">修改activity_main.xml</h2>
+<p>activity_main.xml</p>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
+    xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34;
+    xmlns:tools=&#34;http://schemas.android.com/tools&#34;
+    android:layout_width=&#34;match_parent&#34;
+    android:layout_height=&#34;match_parent&#34;
+    tools:context=&#34;.MainActivity&#34;&gt;
+
+    &lt;GridView
+        android:layout_width=&#34;match_parent&#34;
+        android:layout_height=&#34;match_parent&#34;
+        android:id=&#34;@+id/apps_list&#34;
+        android:numColumns=&#34;4&#34; /&gt;
+
+
+&lt;/androidx.constraintlayout.widget.ConstraintLayout&gt;
+</code></pre><h2 id="新建colorbaseadapterkt">新建ColorBaseAdapter.kt</h2>
+<pre tabindex="0"><code>package mobi.huanyuan.testlauncher
+
+import android.annotation.SuppressLint
+import android.app.Activity
+import android.content.Context
+import android.graphics.Color
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.TextView
+import android.widget.Toast
+import androidx.cardview.widget.CardView
+
+
+class ColorBaseAdapter : BaseAdapter (){
+    private val list = colors()
+
+    @SuppressLint(&#34;ViewHolder&#34;, &#34;InflateParams&#34;)
+    override fun getView(position:Int, convertView: View?, parent: ViewGroup?):View{
+        // Inflate the custom view
+        val inflater = parent?.context?.
+        getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        val view = inflater.inflate(R.layout.custom_view,null)
+
+        // Get the custom view widgets reference
+        val tv = view.findViewById&lt;TextView&gt;(R.id.tv_name)
+        val card = view.findViewById&lt;CardView&gt;(R.id.card_view)
+
+        // Display color name on text view
+        tv.text = list[position].first
+
+        // Set background color for card view
+        card.setCardBackgroundColor(list[position].second)
+
+        // Set a click listener for card view
+        card.setOnClickListener{
+            // Show selected color in a toast message
+            Toast.makeText(parent.context,
+                &#34;Clicked : ${list[position].first}&#34;,Toast.LENGTH_SHORT).show()
+
+            // Get the activity reference from parent
+            val activity  = parent.context as Activity
+
+            // Get the activity root view
+            val viewGroup = activity.findViewById&lt;ViewGroup&gt;(android.R.id.content)
+                .getChildAt(0)
+
+            // Change the root layout background color
+            viewGroup.setBackgroundColor(list[position].second)
+        }
+
+        // Finally, return the view
+        return view
+    }
+
+    override fun getItem(position: Int): Any? {
+        return list[position]
+    }
+
+    override fun getItemId(position: Int): Long {
+        return position.toLong()
+    }
+
+    override fun getCount(): Int {
+        return list.size
+    }
+
+    private fun colors():List&lt;Pair&lt;String,Int&gt;&gt;{
+        return listOf(
+            Pair(&#34;INDIANRED&#34;,Color.parseColor(&#34;#CD5C5C&#34;)),
+            Pair(&#34;LIGHTCORAL&#34;,Color.parseColor(&#34;#F08080&#34;)),
+            Pair(&#34;SALMON&#34;,Color.parseColor(&#34;#FA8072&#34;)),
+            Pair(&#34;DARKSALMON&#34;,Color.parseColor(&#34;#E9967A&#34;)),
+            Pair(&#34;LIGHTSALMON&#34;,Color.parseColor(&#34;#FFA07A&#34;)),
+            Pair(&#34;CRIMSON&#34;,Color.parseColor(&#34;#DC143C&#34;)),
+            Pair(&#34;RED&#34;,Color.parseColor(&#34;#FF0000&#34;)),
+            Pair(&#34;FIREBRICK&#34;,Color.parseColor(&#34;#B22222&#34;)),
+            Pair(&#34;DARKRED&#34;,Color.parseColor(&#34;#8B0000&#34;)),
+
+            Pair(&#34;PINK&#34;,Color.parseColor(&#34;#FFC0CB&#34;)),
+            Pair(&#34;LIGHTPINK&#34;,Color.parseColor(&#34;#FFB6C1&#34;)),
+            Pair(&#34;HOTPINK&#34;,Color.parseColor(&#34;#FF69B4&#34;)),
+            Pair(&#34;DEEPPINK&#34;,Color.parseColor(&#34;#FF1493&#34;)),
+            Pair(&#34;MEDIUMVIOLETRED&#34;,Color.parseColor(&#34;#C71585&#34;)),
+            Pair(&#34;PALEVIOLETRED&#34;,Color.parseColor(&#34;#DB7093&#34;))
+        )
+    }
+}
+</code></pre><h2 id="新建custom_viewxml">新建custom_view.xml</h2>
+<pre tabindex="0"><code>&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+&lt;androidx.cardview.widget.CardView
+    xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34;
+    xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34;
+    xmlns:tools=&#34;http://schemas.android.com/tools&#34;
+    android:id=&#34;@+id/card_view&#34;
+    android:layout_width=&#34;match_parent&#34;
+    android:layout_height=&#34;wrap_content&#34;
+    app:cardCornerRadius=&#34;5dp&#34;
+    app:cardElevation=&#34;5dp&#34;
+    app:cardMaxElevation=&#34;7dp&#34;
+    app:contentPadding=&#34;20dp&#34;
+    android:layout_margin=&#34;5dp&#34; &gt;
+
+    &lt;LinearLayout
+        android:layout_width=&#34;match_parent&#34;
+        android:layout_height=&#34;match_parent&#34;
+        android:orientation=&#34;vertical&#34;
+        tools:layout_editor_absoluteX=&#34;0dp&#34;
+        tools:layout_editor_absoluteY=&#34;0dp&#34;&gt;
+        &lt;TextView
+            android:id=&#34;@+id/tv_name&#34;
+            android:layout_width=&#34;wrap_content&#34;
+            android:layout_height=&#34;wrap_content&#34;
+            android:textStyle=&#34;bold&#34;
+            android:layout_gravity=&#34;center&#34; /&gt;
+    &lt;/LinearLayout&gt;
+
+&lt;/androidx.cardview.widget.CardView&gt;
+</code></pre><h2 id="修改mainactivitykt">修改MainActivity.kt</h2>
+<pre tabindex="0"><code>package mobi.huanyuan.testlauncher
+
+import android.os.Bundle
+import android.widget.GridView
+import androidx.appcompat.app.AppCompatActivity
+import mobi.huanyuan.testlauncher.databinding.ActivityMainBinding
+
+
+class MainActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        // Get an instance of base adapter
+        val adapter = ColorBaseAdapter()
+
+        // Set the grid view adapter
+        binding.appsList.adapter = adapter
+
+        // Configure the grid view
+        binding.appsList.numColumns = 2
+        binding.appsList.horizontalSpacing = 15
+        binding.appsList.verticalSpacing = 15
+        binding.appsList.stretchMode = GridView.STRETCH_COLUMN_WIDTH
+    }
+
+}
+</code></pre><h2 id="编译运行">编译运行</h2>
+<p>运行结果如下图：</p>
+<p><img src="assets/image-20220419133617156.png" alt="image-20220419133617156"></p>
+<p>这里因为没有清理掉系统默认的Launcher，所以需要选择下，这里选择我们自定义的 <code>TestLauncher-&gt;ALWAYS</code>即可。</p>
+<p>注意：如果你想彻底将系统默认Launcher替换成自定义的Launcher，需要下载系统源码，调整并重编译才可以的。</p>
+
+            </article>
+        </div>
+        <div class="col-md-4">
+            
+            <div class="position-sticky" style="top: 4.5rem;">
+                <h4 style="text-align: center;">TOC</h4>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#新建项目">新建项目</a></li>
+    <li><a href="#修改manifest">修改Manifest</a></li>
+    <li><a href="#修改activity_mainxml">修改activity_main.xml</a></li>
+    <li><a href="#新建colorbaseadapterkt">新建ColorBaseAdapter.kt</a></li>
+    <li><a href="#新建custom_viewxml">新建custom_view.xml</a></li>
+    <li><a href="#修改mainactivitykt">修改MainActivity.kt</a></li>
+    <li><a href="#编译运行">编译运行</a></li>
+  </ul>
+</nav>
+            </div>
+            </div>
+    </div>
+</main>
+
+        </div><footer class="site-footer mt-auto footer d-print-none">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xl-3"><h5>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</h5>
+
+<p>如若转载，请标明作者和出处，本站点作品采用<a href='https://creativecommons.org/licenses/by/4.0/' target='blank'> 署名 4.0 国际 (CC BY 4.0) </a>协议进行许可。</p></div>
+            <div class="col-md-4 col-xl-3"><h5>免责声明</h5>
+这里表达的观点是我个人的观点，不能代表我工作的公司、同事以及身边的人的观点。</div>
+            <div class="col-md-4 col-xl-3"><h5>关于网站</h5>
+这个网站是我个人博客站点，分享一些自己平时工作生活中遇到或者学习的内容，
+基于<a href="https://gohugo.io/"><b> Hugo </b></a>搭建，使用的自己创建的主题，
+暂定名称<b> HUANYUAN-BLOG </b>，暂时还没有发布，等后续完善再开源发布。</div>
+        </div>
+
+        <hr />
+
+        <div class="d-flex justify-content-center icons"><a class="py-2 px-2" href="https://twitter.com/Jonnlai85"><i class="fab fa-twitter"></i></a>
+<a class="py-2 px-2" href="https://instagram.com/jonathanlai8511"><i class="fab fa-instagram"></i></a>
+
+
+<a class="py-2 px-2" href='https://blog.huanyuan.mobi/index.xml'><i class="fas fa-rss"></i></a>
+</div>
+
+        <div class="d-flex justify-content-center github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+            &nbsp;&nbsp;
+            <a href="https://github.com/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-yellowgreen">Github</span></a>
+        </div>
+    </div>
+</footer></body>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+   
+$((function(){
+ 
+    $(".blog-post img").addClass("img-fluid");
+ 
+}));
+</script>
+</html>

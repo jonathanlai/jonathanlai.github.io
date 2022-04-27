@@ -1,99 +1,117 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 幻猿 的博客</title>
-    <link>https://huanyuan.mobi/tags/</link>
-    <description>Recent content in Tags on 幻猿 的博客</description>
+    <title>Tags on huanyuan.mobi</title>
+    <link>https://blog.huanyuan.mobi/tags/</link>
+    <description>Recent content in Tags on huanyuan.mobi</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Tue, 22 Mar 2022 18:20:00 +0800</lastBuildDate><atom:link href="https://huanyuan.mobi/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</copyright>
+    <lastBuildDate>Wed, 20 Apr 2022 14:25:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android</title>
+      <link>https://blog.huanyuan.mobi/tags/android/</link>
+      <pubDate>Wed, 20 Apr 2022 14:25:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/android/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>Java</title>
-      <link>https://huanyuan.mobi/tags/Java/</link>
+      <link>https://blog.huanyuan.mobi/tags/java/</link>
       <pubDate>Tue, 22 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/Java/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/java/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Spring</title>
-      <link>https://huanyuan.mobi/tags/Spring/</link>
+      <link>https://blog.huanyuan.mobi/tags/spring/</link>
       <pubDate>Tue, 22 Mar 2022 10:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/Spring/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/spring/</guid>
       <description></description>
     </item>
     
     <item>
       <title>SpringBoot</title>
-      <link>https://huanyuan.mobi/tags/SpringBoot/</link>
+      <link>https://blog.huanyuan.mobi/tags/springboot/</link>
       <pubDate>Tue, 22 Mar 2022 10:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/SpringBoot/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/springboot/</guid>
       <description></description>
     </item>
     
     <item>
       <title>MongoDB</title>
-      <link>https://huanyuan.mobi/tags/MongoDB/</link>
+      <link>https://blog.huanyuan.mobi/tags/mongodb/</link>
       <pubDate>Mon, 21 Mar 2022 20:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/MongoDB/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Github</title>
-      <link>https://huanyuan.mobi/tags/Github/</link>
-      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
-      
-      <guid>https://huanyuan.mobi/tags/Github/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>https://huanyuan.mobi/tags/Hugo/</link>
-      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
-      
-      <guid>https://huanyuan.mobi/tags/Hugo/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/mongodb/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Chocolatey</title>
-      <link>https://huanyuan.mobi/tags/Chocolatey/</link>
-      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
+      <link>https://blog.huanyuan.mobi/tags/chocolatey/</link>
+      <pubDate>Mon, 21 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/Chocolatey/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Node.js</title>
-      <link>https://huanyuan.mobi/tags/Node.js/</link>
-      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
-      
-      <guid>https://huanyuan.mobi/tags/Node.js/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>nvm</title>
-      <link>https://huanyuan.mobi/tags/nvm/</link>
-      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
-      
-      <guid>https://huanyuan.mobi/tags/nvm/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/chocolatey/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://huanyuan.mobi/tags/Windows/</link>
+      <link>https://blog.huanyuan.mobi/tags/windows/</link>
+      <pubDate>Mon, 21 Mar 2022 18:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Cloud</title>
+      <link>https://blog.huanyuan.mobi/tags/spring-cloud/</link>
+      <pubDate>Sun, 20 Mar 2022 22:00:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/spring-cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>https://blog.huanyuan.mobi/tags/github/</link>
+      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>https://blog.huanyuan.mobi/tags/hugo/</link>
+      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Node.js</title>
+      <link>https://blog.huanyuan.mobi/tags/node.js/</link>
       <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
       
-      <guid>https://huanyuan.mobi/tags/Windows/</guid>
+      <guid>https://blog.huanyuan.mobi/tags/node.js/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nvm</title>
+      <link>https://blog.huanyuan.mobi/tags/nvm/</link>
+      <pubDate>Fri, 18 Mar 2022 18:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/tags/nvm/</guid>
       <description></description>
     </item>
     

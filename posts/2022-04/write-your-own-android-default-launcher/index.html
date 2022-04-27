@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>自己手写Android默认的Launcher | huanyuan.mobi</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+
+    <link href="https://blog.huanyuan.mobi/css/style.css" rel="stylesheet">
+   
+</head><body><header><nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://blog.huanyuan.mobi/">HUANYUAN.MOBI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://blog.huanyuan.mobi/">首页</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">编程语言</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/java">Java</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">编程技术</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/android">Android</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+</nav>  
+</header><div id="content">
+<main class="container" >
+    <div class="row g-5">
+        <div class="col-md-8">
+            <article class="blog-post" style="padding-top: 2rem;">
+                <h2 class="blog-post-title">自己手写Android默认的Launcher</h2>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-04-18&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/android/'>android</a>
+                    </small>
+                </div>
+                <p>如果你要定制一个Android系统，你想用你自己的Launcher(Home)作主界面来替换Android自己的Home，而且不希望用户安装的Launcher来替换掉你的Launcher。
+我们可以通过修改Framework来实现这样的功能。</p>
+<p>这里以Android2.1的源代码为例来实际说明。</p>
+<h2 id="1android的启动过程">1、Android的启动过程。</h2>
+<p>首先了解一下Android的启动过程。</p>
+<p>Android系统的启动先从Zygote开始启动，然后&hellip;&hellip;(中间的过程就不说了)&hellip;..一直到了SystemServer(framework)这个地方，看到这段代码：</p>
+<pre tabindex="0"><code>     /**
+     * This method is called from Zygote to initialize the system. This will cause the native
+     * services (SurfaceFlinger, AudioFlinger, etc..) to be started. After that it will call back
+     * up into init2() to start the Android services.
+     */
+    native public static void init1(String[] args);
+    
+    public static void main(String[] args) {
+        if (SamplingProfilerIntegration.isEnabled()) {
+            SamplingProfilerIntegration.start();
+            timer = new Timer();
+            timer.schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    SamplingProfilerIntegration.writeSnapshot(&#34;system_server&#34;);
+                }
+            }, SNAPSHOT_INTERVAL, SNAPSHOT_INTERVAL);
+        }
+    
+        // The system server has to run all of the time, so it needs to be
+        // as efficient as possible with its memory usage.
+        VMRuntime.getRuntime().setTargetHeapUtilization(0.8f);
+    
+        System.loadLibrary(&#34;android_servers&#34;);
+        init1(args);
+    }
+    
+    public static final void init2() {
+        Log.i(TAG, &#34;Entered the Android system server!&#34;);
+        Thread thr = new ServerThread();
+        thr.setName(&#34;android.server.ServerThread&#34;);
+        thr.start();
+    }
+}
+</code></pre><p>从SystemServer的main函数开始启动各种服务。
+首先启动init1,然后启动init2.
+从上面的注释可以看到：init1这个方法时被Zygote调用来初始化系统的，init1会启动native的服务如SurfaceFlinger,AudioFlinger等等，这些工作做完以后会回调init2来启动Android的service。</p>
+<p>这里我们主要来关注init2的过程。
+init2中启动ServerThread线程，
+ServerThread中启动了一系列的服务，比如这些：</p>
+<pre tabindex="0"><code>ActivityManagerService
+EntropyService
+PowerManagerService
+TelephonyRegistry
+PackageManagerService
+AccountManagerService
+BatteryService
+HardwareService
+Watchdog
+SensorService
+BluetoothService
+StatusBarService
+ClipboardService
+InputMethodManagerService
+NetStatService
+ConnectivityService
+AccessibilityManagerService
+NotificationManagerService
+MountService
+DeviceStorageMonitorService
+LocationManagerService
+SearchManagerService
+FallbackCheckinService
+WallpaperManagerService
+AudioService
+BackupManagerService
+AppWidgetService
+</code></pre><p>这些大大小小的服务起来以后，开始
+<code>((ActivityManagerService)ActivityManagerNative.getDefault()).systemReady()</code>
+在systemReady后开始开始启动Launcher。</p>
+<p>在寻找Launcher的时候是根据HOME的filter（在Manifest中定义的<code>&lt;category android:name=&quot;android.intent.category.HOME&quot; /&gt;</code>）来过滤。
+然后根据filter出来的HOME来启动，如果只有一个HOME，则启动这个HOME，如果用户自己装了HOME，那就会弹出来一个列表供用户选择。</p>
+<p>我们现在希望从这里弹出我们自己定制的Launcher,同时也不希望弹出选择HOME的界面，我们不希望用户修改我们的home，比如我们的home上放了好多广告，以及强制安装的程序，不希望用户把它干掉。</p>
+<p>我们可以通过这样来实现：</p>
+<h2 id="2定义私有filter选项">2、定义私有filter选项</h2>
+<p>定义一个私有的filter选项，然后用这个选项来过滤HOME。
+一般情况下我们使用Manifest中定义的<code>&lt;category android:name=&quot;android.intent.category.HOME&quot;</code>来过滤的，我们现在增加一个私有的<code>HOME_FIRST</code>过滤。</p>
+<p>在<code>Intent.java(frameworks/base/core/java/android/content/Intent.java)</code>中添加两行代码</p>
+<pre tabindex="0"><code>//lixinso:添加CATEGORY_HOME_FIRST
+@SdkConstant(SdkConstantType.INTENT_CATEGORY)
+public static final String CATEGORY_HOME_FIRST = &#34;android.intent.category.HOME_FIRST&#34;;
+</code></pre><h2 id="3修改相关代码">3、修改相关代码</h2>
+<p>修改和<code>CATEGORY_HOME</code>相关的所有的地方，都改成<code>HOME_FIRST</code>，主要是<code>framework</code>中的这几个地方：</p>
+<p><code>frameworks/base/services/java/com/android/server/am/ActivityManagerService.java</code>中
+<code>//intent.addCategory(Intent.CATEGORY_HOME);</code>
+改成
+<code>intent.addCategory(Intent.CATEGORY_HOME_FIRST); //lixinso:</code></p>
+<p><code>//if (r.intent.hasCategory(Intent.CATEGORY_HOME)) {</code>
+改成
+<code>if (r.intent.hasCategory(Intent.CATEGORY_HOME_FIRST)) { //lixinso: Intent.CATEGORY_HOME -&gt; Intent.CATEGORY_HOME_FIRST</code></p>
+<p><code>frameworks/base/services/java/com/android/server/am/HistoryRecorder.java</code>中
+<code>// _intent.hasCategory(Intent.CATEGORY_HOME) &amp;&amp;</code>
+改成
+<code>_intent.hasCategory(Intent.CATEGORY_HOME_FIRST) &amp;&amp; //lixinso: Intent.CATEGORY_HOME-&gt;Intent.CATEGORY_HOME_FIRST</code></p>
+<p><code>frameworks/policies/base/mid/com/android/internal/policy/impl/MidWindowManager.java</code>中
+<code>//mHomeIntent.addCategory(Intent.CATEGORY_HOME); </code>
+改成
+<code> mHomeIntent.addCategory(Intent.CATEGORY_HOME_FIRST); //lixinso</code></p>
+<p><code>frameworks/policies/base/mid/com/android/internal/policy/impl/RecentApplicationsDialog.java</code>中
+<code>//new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),0);</code>
+改成
+<code>new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME_FIRST),0); //lixinso</code></p>
+<p><code>frameworks/policies/base/phone/com/android/internal/policy/impl/PhoneWindowManager.java</code>中
+<code>//mHomeIntent.addCategory(Intent.CATEGORY_HOME);</code>
+改成
+<code>mHomeIntent.addCategory(Intent.CATEGORY_HOME_FIRST); //lixinso</code></p>
+<p><code>frameworks/policies/base/phone/com/android/internal/policy/impl/RecentApplicationsDialog.java</code>中
+<code>//ResolveInfo homeInfo = pm.resolveActivity(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME),0);</code>
+改成
+<code>ResolveInfo homeInfo = pm.resolveActivity(new Intent(Intent.ACTION_MAIN).addCategory(Intent.CATEGORY_HOME_FIRST),0); //lixinso</code></p>
+<h2 id="4写一个自己的launcher">4、写一个自己的Launcher.</h2>
+<p>可以参考android sample中的Launcher，或者android源代码中的<code> /packages/apps/Launcher</code> 来写。
+在Launcher中标记其是不是Launcher的最关键的代码时Manifest中的<code>filter:android:name=&quot;android.intent.category.HOME&quot;</code>
+现在我们定义了自己的filter,那么，我们在我们自己写的Launcher中将Manifest改为：</p>
+<pre tabindex="0"><code>&lt;application  android:process=&#34;android.process.acore3&#34; android:icon=&#34;@drawable/icon&#34; android:label=&#34;@string/app_name&#34;&gt;
+    &lt;activity android:name=&#34;.FirstAppActivity&#34; android:label=&#34;@string/app_name&#34;&gt;
+        &lt;intent-filter&gt;
+            &lt;action android:name=&#34;android.intent.action.MAIN&#34; /&gt;
+            &lt;category android:name=&#34;android.intent.category.HOME_FIRST&#34; /&gt;
+            &lt;category android:name=&#34;android.intent.category.DEFAULT&#34; /&gt;
+            &lt;category android:name=&#34;android.intent.category.MONKEY&#34; /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/activity&gt;
+&lt;/application&gt;
+</code></pre><p>然后将编译好的apk放到<code>/out/target/product/generic/system/app</code>目录下。</p>
+<h2 id="5清理">5、清理</h2>
+<p>将Android自带的Launcher删除掉，包括源代码(packages/apps/Launcher)和apk(/out/target/product/generic/system/app/Launcher.apk)。</p>
+<h2 id="6重编译">6、重编译</h2>
+<p>做完这些工作，就可以重新编译Android了，我们可以编译修改过的几个相关的包。
+如果之前编译过了Android源码，可以用mmm命令来编译部分的改动。
+这里需要这样编译：</p>
+<pre tabindex="0"><code>$ . build/envsetup.sh 
+$ mmm frameworks/base
+$ mmm frameworks/base/services/java
+$ mmm frameworks/policies/base/mid
+$ mmm frameworks/policies/base/phone
+</code></pre><h2 id="7重生成img">7、重生成img</h2>
+<p>编译完成后重新生成img文件。</p>
+<pre tabindex="0"><code>$ make snod
+</code></pre><h2 id="8演示成果">8、演示成果</h2>
+<p>现在可以启动Android模拟器来看效果了。
+首先设置环境变量：</p>
+<pre tabindex="0"><code>$ export ANDROID_PRODUCT_OUT= ./out/target/product/generic
+</code></pre><p>然后切换到</p>
+<pre tabindex="0"><code>$ cd ./out/host/linux-x86/bin
+</code></pre><p>运行</p>
+<pre tabindex="0"><code>$ ./emulator
+</code></pre><p>这样我们启动的模拟器里面用的p_w_picpath就是我们刚才编译好的自己定制的东西了。
+从模拟器上可以看到启动的Launcher是我们自己的Launcher，不会出现默认的Launcher了，也不会出现选择界面。</p>
+<h2 id="9验证结果">9、验证结果</h2>
+<p>我们再验证一下，如果用户装上了一个其他的Launcher(Home)会怎么样。
+从网上找一个一般的Launcher或者自己写一个一般的Launcher装上去，重新启动，不会出现选择界面。
+按HOME键也不会出来两个HOME来选择。
+这样我们就牢牢控制了用户的桌面。</p>
+<p>只有我们自己定制的HOME才能装上。 这对于定制Android设备的厂商很有用处。</p>
+<p>©著作权归作者所有：来自51CTO博客作者lovely_1133的原创作品，请联系作者获取转载授权，否则将追究法律责任
+让你自己写的Android的Launcher成为系统中第一个启动的，也是唯一的Launcher
+<a href="https://blog.51cto.com/lovely1133/581011">https://blog.51cto.com/lovely1133/581011</a></p>
+
+            </article>
+        </div>
+        <div class="col-md-4">
+            
+            <div class="position-sticky" style="top: 4.5rem;">
+                <h4 style="text-align: center;">TOC</h4>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1android的启动过程">1、Android的启动过程。</a></li>
+    <li><a href="#2定义私有filter选项">2、定义私有filter选项</a></li>
+    <li><a href="#3修改相关代码">3、修改相关代码</a></li>
+    <li><a href="#4写一个自己的launcher">4、写一个自己的Launcher.</a></li>
+    <li><a href="#5清理">5、清理</a></li>
+    <li><a href="#6重编译">6、重编译</a></li>
+    <li><a href="#7重生成img">7、重生成img</a></li>
+    <li><a href="#8演示成果">8、演示成果</a></li>
+    <li><a href="#9验证结果">9、验证结果</a></li>
+  </ul>
+</nav>
+            </div>
+            </div>
+    </div>
+</main>
+
+        </div><footer class="site-footer mt-auto footer d-print-none">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xl-3"><h5>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</h5>
+
+<p>如若转载，请标明作者和出处，本站点作品采用<a href='https://creativecommons.org/licenses/by/4.0/' target='blank'> 署名 4.0 国际 (CC BY 4.0) </a>协议进行许可。</p></div>
+            <div class="col-md-4 col-xl-3"><h5>免责声明</h5>
+这里表达的观点是我个人的观点，不能代表我工作的公司、同事以及身边的人的观点。</div>
+            <div class="col-md-4 col-xl-3"><h5>关于网站</h5>
+这个网站是我个人博客站点，分享一些自己平时工作生活中遇到或者学习的内容，
+基于<a href="https://gohugo.io/"><b> Hugo </b></a>搭建，使用的自己创建的主题，
+暂定名称<b> HUANYUAN-BLOG </b>，暂时还没有发布，等后续完善再开源发布。</div>
+        </div>
+
+        <hr />
+
+        <div class="d-flex justify-content-center icons"><a class="py-2 px-2" href="https://twitter.com/Jonnlai85"><i class="fab fa-twitter"></i></a>
+<a class="py-2 px-2" href="https://instagram.com/jonathanlai8511"><i class="fab fa-instagram"></i></a>
+
+
+<a class="py-2 px-2" href='https://blog.huanyuan.mobi/index.xml'><i class="fas fa-rss"></i></a>
+</div>
+
+        <div class="d-flex justify-content-center github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+            &nbsp;&nbsp;
+            <a href="https://github.com/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-yellowgreen">Github</span></a>
+        </div>
+    </div>
+</footer></body>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+   
+$((function(){
+ 
+    $(".blog-post img").addClass("img-fluid");
+ 
+}));
+</script>
+</html>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Android on huanyuan.mobi</title>
+    <link>https://blog.huanyuan.mobi/categories/android/</link>
+    <description>Recent content in Android on huanyuan.mobi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</copyright>
+    <lastBuildDate>Wed, 20 Apr 2022 14:25:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/categories/android/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Android系统Launcher上手</title>
+      <link>https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/</link>
+      <pubDate>Wed, 20 Apr 2022 14:25:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/</guid>
+      <description>关于Launcher Launcher是安卓系统中的桌面启动器，安卓系统的桌面UI统称为Launcher。 Launcher是安卓系统中的主要程序组件之一，安卓系统中如果没有Launcher就无法启动安卓桌面。 那么你如果想要自定义一个安卓桌面，那么就需要修改调整这部分内容。
+Launcher上手 下面我就通过一个简单的UI(UI源码）界面来演示怎么自定义Launcher Activity&amp;mdash;-自定义桌面。
+新建项目 Android Studio新建一个安卓项目。
+选择Empty Activity，然后Next。 然后Finish完成项目创建。等初始化完成，项目结构如下：
+修改Manifest 在MainActivity的intent-filter标签内添加下边两行代码：
+&amp;lt;category android:name=&amp;#34;android.intent.category.HOME&amp;#34; /&amp;gt; &amp;lt;category android:name=&amp;#34;android.intent.category.DEFAULT&amp;#34; /&amp;gt; 修改activity_main.xml activity_main.xml
+&amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34;?&amp;gt; &amp;lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&amp;#34;http://schemas.android.com/apk/res/android&amp;#34; xmlns:app=&amp;#34;http://schemas.android.com/apk/res-auto&amp;#34; xmlns:tools=&amp;#34;http://schemas.android.com/tools&amp;#34; android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; tools:context=&amp;#34;.MainActivity&amp;#34;&amp;gt; &amp;lt;GridView android:layout_width=&amp;#34;match_parent&amp;#34; android:layout_height=&amp;#34;match_parent&amp;#34; android:id=&amp;#34;@+id/apps_list&amp;#34; android:numColumns=&amp;#34;4&amp;#34; /&amp;gt; &amp;lt;/androidx.constraintlayout.widget.ConstraintLayout&amp;gt; 新建ColorBaseAdapter.kt package mobi.huanyuan.testlauncher import android.annotation.SuppressLint import android.app.Activity import android.content.Context import android.graphics.Color import android.view.LayoutInflater import android.view.View import android.view.ViewGroup import android.widget.BaseAdapter import android.widget.TextView import android.widget.Toast import androidx.cardview.widget.CardView class ColorBaseAdapter : BaseAdapter (){ private val list = colors() @SuppressLint(&amp;#34;ViewHolder&amp;#34;, &amp;#34;InflateParams&amp;#34;) override fun getView(position:Int, convertView: View?</description>
+    </item>
+    
+    <item>
+      <title>查看Android系统源码版本号</title>
+      <link>https://blog.huanyuan.mobi/posts/2022-04/view-android-system-source-code-version-number/</link>
+      <pubDate>Tue, 19 Apr 2022 11:30:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/posts/2022-04/view-android-system-source-code-version-number/</guid>
+      <description>我们手里有一份Android系统的源码，那你如果想知道这份源码是哪个版本的，该怎么办呢？
+查找代码：
+/build/core/version_defaults.mk
+在文件中查找PLATFORM_VERSION，你就会发现如下段代码：
+ifeq &amp;#34;&amp;#34; &amp;#34;$(PLATFORM_VERSION)&amp;#34; # This is the canonical definition of the platform version, # which is the version that we reveal to the end user. # Update this value when the platform version changes (rather # than overriding it somewhere else). Can be an arbitrary string. PLATFORM_VERSION := 7.0 endif 这里边的PLATFORM_VERSION := 7.0就是当前代码系统版本。
+不同的版本代码稍有差别，但总体**PLATFORM_VERSION **这个关键字是没差别的，搜索就对了。
+Android 10 源码：
+# Note that there should be one PLATFORM_VERSION and PLATFORM_VERSION_CODENAME # entry for each unreleased API level, regardless of # MIN_PLATFORM_VERSION/MAX_PLATFORM_VERSION.</description>
+    </item>
+    
+    <item>
+      <title>自己手写Android默认的Launcher</title>
+      <link>https://blog.huanyuan.mobi/posts/2022-04/write-your-own-android-default-launcher/</link>
+      <pubDate>Mon, 18 Apr 2022 10:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/posts/2022-04/write-your-own-android-default-launcher/</guid>
+      <description>如果你要定制一个Android系统，你想用你自己的Launcher(Home)作主界面来替换Android自己的Home，而且不希望用户安装的Launcher来替换掉你的Launcher。 我们可以通过修改Framework来实现这样的功能。
+这里以Android2.1的源代码为例来实际说明。
+1、Android的启动过程。 首先了解一下Android的启动过程。
+Android系统的启动先从Zygote开始启动，然后&amp;hellip;&amp;hellip;(中间的过程就不说了)&amp;hellip;..一直到了SystemServer(framework)这个地方，看到这段代码：
+ /** * This method is called from Zygote to initialize the system. This will cause the native * services (SurfaceFlinger, AudioFlinger, etc..) to be started. After that it will call back * up into init2() to start the Android services. */ native public static void init1(String[] args); public static void main(String[] args) { if (SamplingProfilerIntegration.isEnabled()) { SamplingProfilerIntegration.start(); timer = new Timer(); timer.schedule(new TimerTask() { @Override public void run() { SamplingProfilerIntegration.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>2022-04 | huanyuan.mobi</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:400">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/styles/default.min.css">
+
+    <link href="https://blog.huanyuan.mobi/css/style.css" rel="stylesheet">
+   
+</head><body><header><nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://blog.huanyuan.mobi/">HUANYUAN.MOBI</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="https://blog.huanyuan.mobi/">首页</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown01" data-bs-toggle="dropdown" aria-expanded="false">编程语言</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown01">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/java">Java</a></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">编程技术</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/android">Android</a></li>
+            </ul>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+</nav>  
+</header><div id="content">
+<main class="container" >
+    <div class="row g-5">
+        <div class="col-md-8">
+            
+            
+            
+            
+            <article class="blog-post" style="padding-top: 2rem;">
+                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/"><h3 class="blog-post-title">Android系统Launcher上手</h3></a>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-04-20&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/android/'>android</a>
+                    </small>
+                </div>
+
+                <div>
+                    关于Launcher Launcher是安卓系统中的桌面启动器，安卓系统的桌面UI统称为Launcher。 Launcher是安卓系统中的主要程序组件之一，安卓系统中如果没有Launcher就无法启动安卓桌面。 那么你如果想要自定义一个安卓桌面，那么就需要修改调整这部分内容。
+Launcher上手 下面我就通过一个简单的UI(UI源码）界面来演示怎么自定义Launcher Activity&mdash;-自定义桌面。
+新建项目 Android Studio新建一个安卓项目。
+选择Empty Activity，然后Next。 然后Finish完成项目创建。等初始化完成，项目结构如下：
+修改Manifest 在MainActivity的intent-filter标签内添加下边两行代码：
+&lt;category android:name=&#34;android.intent.category.HOME&#34; /&gt; &lt;category android:name=&#34;android.intent.category.DEFAULT&#34; /&gt; 修改activity_main.xml activity_main.xml
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; &lt;androidx.constraintlayout.widget.ConstraintLayout xmlns:android=&#34;http://schemas.android.com/apk/res/android&#34; xmlns:app=&#34;http://schemas.android.com/apk/res-auto&#34; xmlns:tools=&#34;http://schemas.android.com/tools&#34; android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;match_parent&#34; tools:context=&#34;.MainActivity&#34;&gt; &lt;GridView android:layout_width=&#34;match_parent&#34; android:layout_height=&#34;match_parent&#34; android:id=&#34;@+id/apps_list&#34; android:numColumns=&#34;4&#34; /&gt; &lt;/androidx.constraintlayout.widget.ConstraintLayout&gt; 新建ColorBaseAdapter.kt package mobi.huanyuan.testlauncher import android.annotation.SuppressLint import android.app.Activity import android.content.Context import android.graphics.Color import android.view.LayoutInflater import android.view.View import android.view.ViewGroup import android.widget.BaseAdapter import android.widget.TextView import android.widget.Toast import androidx.cardview.widget.CardView class ColorBaseAdapter : BaseAdapter (){ private val list = colors() @SuppressLint(&#34;ViewHolder&#34;, &#34;InflateParams&#34;) override fun getView(position:Int, convertView: View?
+                </div>
+                
+                <div>
+                    <a href="https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                </div>
+            </article>
+          
+            <article class="blog-post" style="padding-top: 2rem;">
+                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-04/view-android-system-source-code-version-number/"><h3 class="blog-post-title">查看Android系统源码版本号</h3></a>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-04-19&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/android/'>android</a>
+                    </small>
+                </div>
+
+                <div>
+                    我们手里有一份Android系统的源码，那你如果想知道这份源码是哪个版本的，该怎么办呢？
+查找代码：
+/build/core/version_defaults.mk
+在文件中查找PLATFORM_VERSION，你就会发现如下段代码：
+ifeq &#34;&#34; &#34;$(PLATFORM_VERSION)&#34; # This is the canonical definition of the platform version, # which is the version that we reveal to the end user. # Update this value when the platform version changes (rather # than overriding it somewhere else). Can be an arbitrary string. PLATFORM_VERSION := 7.0 endif 这里边的PLATFORM_VERSION := 7.0就是当前代码系统版本。
+不同的版本代码稍有差别，但总体**PLATFORM_VERSION **这个关键字是没差别的，搜索就对了。
+Android 10 源码：
+# Note that there should be one PLATFORM_VERSION and PLATFORM_VERSION_CODENAME # entry for each unreleased API level, regardless of # MIN_PLATFORM_VERSION/MAX_PLATFORM_VERSION.
+                </div>
+                
+                <div>
+                    <a href="https://blog.huanyuan.mobi/posts/2022-04/view-android-system-source-code-version-number/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                </div>
+            </article>
+          
+            <article class="blog-post" style="padding-top: 2rem;">
+                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-04/write-your-own-android-default-launcher/"><h3 class="blog-post-title">自己手写Android默认的Launcher</h3></a>
+                
+                <div class="mb-3">
+                    <small>
+                        <strong>By: Jonathan Lai</strong>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-04-18&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/android/'>android</a>
+                    </small>
+                </div>
+
+                <div>
+                    如果你要定制一个Android系统，你想用你自己的Launcher(Home)作主界面来替换Android自己的Home，而且不希望用户安装的Launcher来替换掉你的Launcher。 我们可以通过修改Framework来实现这样的功能。
+这里以Android2.1的源代码为例来实际说明。
+1、Android的启动过程。 首先了解一下Android的启动过程。
+Android系统的启动先从Zygote开始启动，然后&hellip;&hellip;(中间的过程就不说了)&hellip;..一直到了SystemServer(framework)这个地方，看到这段代码：
+ /** * This method is called from Zygote to initialize the system. This will cause the native * services (SurfaceFlinger, AudioFlinger, etc..) to be started. After that it will call back * up into init2() to start the Android services. */ native public static void init1(String[] args); public static void main(String[] args) { if (SamplingProfilerIntegration.isEnabled()) { SamplingProfilerIntegration.start(); timer = new Timer(); timer.schedule(new TimerTask() { @Override public void run() { SamplingProfilerIntegration.
+                </div>
+                
+                <div>
+                    <a href="https://blog.huanyuan.mobi/posts/2022-04/write-your-own-android-default-launcher/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                </div>
+            </article>
+          
+          </div>
+        <div class="col-md-4">
+            <div class="position-sticky">
+    <div class="p-4 mb-3 bg-light rounded">
+      <h4 class="fst-italic">About Me</h4>
+      <p class="mb-0"><b>姓名：</b>赖兴兵</p>
+      <p class="mb-0"><b>洋名：</b>Jonathan Lai</p>
+      <p class="mb-0"><b>现居：</b>成都</p>
+      <p class="mb-0"><b>状态：</b>努力搬砖养家中</p>
+      <p class="mb-0"><b>爱好：</b>电影、音乐以及吃吃吃</p>
+      <p class="mb-0"><b>关注：</b>Java后端技术体系，Android前端技术体系，软件工程师成长等</p>
+      <p class="mb-0"><b>Email：</b>xingbing.lai@gmail.com</p>
+    </div><div class="p-4">
+    <h4 class="fst-italic">Categories</h4>
+    <ol class="list-unstyled mb-0">
+        
+
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/java">java</a> (5)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/android">android</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/windows">windows</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86">包管理</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/spring-cloud">spring-cloud</a> (2)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/springboot">springboot</a> (2)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/github">github</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/hugo">hugo</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/node.js">node.js</a> (1)</li>
+        
+    </ol>
+</div><div class="p-4">
+    <h4 class="fst-italic">Tags</h4>
+    <ol class="list-unstyled mb-0">
+        
+
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/java">java</a> (5)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/android">android</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/chocolatey">chocolatey</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/spring">spring</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/windows">windows</a> (3)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/hugo">hugo</a> (2)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/spring-cloud">spring-cloud</a> (2)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/springboot">springboot</a> (2)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/github">github</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/mongodb">mongodb</a> (1)</li>
+        
+    </ol>
+</div>
+<div class="p-4">
+    <h4 class="fst-italic">Archives</h4>
+    <ol class="list-unstyled mb-0">
+        
+        <li><a href="https://blog.huanyuan.mobi/archives/2022-03/">2022-03</a></li>
+        
+        <li><a href="https://blog.huanyuan.mobi/archives/2022-04/">2022-04</a></li>
+        
+    </ol>
+</div></div></div>
+    </div>
+</main>
+
+        </div><footer class="site-footer mt-auto footer d-print-none">
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-xl-3"><h5>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</h5>
+
+<p>如若转载，请标明作者和出处，本站点作品采用<a href='https://creativecommons.org/licenses/by/4.0/' target='blank'> 署名 4.0 国际 (CC BY 4.0) </a>协议进行许可。</p></div>
+            <div class="col-md-4 col-xl-3"><h5>免责声明</h5>
+这里表达的观点是我个人的观点，不能代表我工作的公司、同事以及身边的人的观点。</div>
+            <div class="col-md-4 col-xl-3"><h5>关于网站</h5>
+这个网站是我个人博客站点，分享一些自己平时工作生活中遇到或者学习的内容，
+基于<a href="https://gohugo.io/"><b> Hugo </b></a>搭建，使用的自己创建的主题，
+暂定名称<b> HUANYUAN-BLOG </b>，暂时还没有发布，等后续完善再开源发布。</div>
+        </div>
+
+        <hr />
+
+        <div class="d-flex justify-content-center icons"><a class="py-2 px-2" href="https://twitter.com/Jonnlai85"><i class="fab fa-twitter"></i></a>
+<a class="py-2 px-2" href="https://instagram.com/jonathanlai8511"><i class="fab fa-instagram"></i></a>
+
+
+<a class="py-2 px-2" href='https://blog.huanyuan.mobi/index.xml'><i class="fas fa-rss"></i></a>
+</div>
+
+        <div class="d-flex justify-content-center github-badge">
+            <a href="https://gohugo.io/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-blue">Hugo</span></a>
+            &nbsp;&nbsp;
+            <a href="https://github.com/" target="_black" rel="nofollow"><span class="badge-subject">Powered by</span><span class="badge-value bg-yellowgreen">Github</span></a>
+        </div>
+    </div>
+</footer></body>
+
+    
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.1/highlight.min.js"></script>
+<script>
+    hljs.highlightAll();
+   
+$((function(){
+ 
+    $(".blog-post img").addClass("img-fluid");
+ 
+}));
+</script>
+</html>

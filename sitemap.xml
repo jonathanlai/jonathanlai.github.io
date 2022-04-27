@@ -2,95 +2,143 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://huanyuan.mobi/categories/</loc>
+    <loc>https://blog.huanyuan.mobi/archives/2022-04/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/android/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/android/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/archives/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/posts/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/</loc>
+    <lastmod>2022-04-20T14:25:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/posts/2022-04/view-android-system-source-code-version-number/</loc>
+    <lastmod>2022-04-19T11:30:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/posts/2022-04/write-your-own-android-default-launcher/</loc>
+    <lastmod>2022-04-18T10:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/archives/2022-03/</loc>
     <lastmod>2022-03-22T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Java/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/java/</loc>
     <lastmod>2022-03-22T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/Java/</loc>
+    <loc>https://blog.huanyuan.mobi/categories/java/</loc>
     <lastmod>2022-03-22T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/2022-03-22/java-application-high-cpu-troubleshooting/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/java-application-high-cpu-troubleshooting/</loc>
     <lastmod>2022-03-22T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/</loc>
-    <lastmod>2022-03-22T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/tags/</loc>
-    <lastmod>2022-03-22T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/</loc>
-    <lastmod>2022-03-22T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/tags/Spring/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/spring/</loc>
     <lastmod>2022-03-22T10:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/SpringBoot/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/spring-springmvc-springboot-different/</loc>
     <lastmod>2022-03-22T10:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/SpringBoot/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/springboot/</loc>
     <lastmod>2022-03-22T10:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/2022-03-22/spring-springmvc-springboot-different/</loc>
+    <loc>https://blog.huanyuan.mobi/categories/springboot/</loc>
     <lastmod>2022-03-22T10:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/MongoDB/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/mongodb/</loc>
     <lastmod>2022-03-21T20:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/2022-03-21/Cannot-create-namespace-MYDB.Test101-in-multi-document-transaction/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/cannot-create-namespace-mydb.test101-in-multi-document-transaction/</loc>
     <lastmod>2022-03-21T20:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Github/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/chocolatey/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-architecture-design/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/windows/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/windows/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-architecture-design/test/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-architecture-design/test2/</loc>
+    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/spring-cloud/</loc>
+    <lastmod>2022-03-20T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/spring-cloud/</loc>
+    <lastmod>2022-03-20T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-01/</loc>
+    <lastmod>2022-03-20T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-spring-cloud/</loc>
+    <lastmod>2022-03-20T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-02/</loc>
+    <lastmod>2022-03-20T18:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/github/</loc>
     <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/Github/</loc>
+    <loc>https://blog.huanyuan.mobi/categories/github/</loc>
     <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Hugo/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/hugo/</loc>
     <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/using-utterances/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/using-utterances/</loc>
     <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Chocolatey/</loc>
+    <loc>https://blog.huanyuan.mobi/categories/hugo/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/Hugo/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/node.js/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Node.js/</loc>
+    <loc>https://blog.huanyuan.mobi/categories/node.js/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/Node.js/</loc>
+    <loc>https://blog.huanyuan.mobi/tags/nvm/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/nvm/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/windows-package-manager-chocolatey-install/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/tags/Windows/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/windows-hugo-install/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/categories/Windows/</loc>
+    <loc>https://blog.huanyuan.mobi/posts/2022-03/install-nodejs-by-nvm/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/post/windows-package-manager-chocolatey-install/</loc>
-    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/post/windows-hugo-install/</loc>
-    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
-    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/post/install-nodejs-by-nvm/</loc>
-    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://huanyuan.mobi/about/</loc>
+    <loc>https://blog.huanyuan.mobi/about/</loc>
     <lastmod>2022-03-18T00:00:08+00:00</lastmod>
   </url><url>
-    <loc>https://huanyuan.mobi/archives/</loc>
+    <loc>https://blog.huanyuan.mobi/archives/</loc>
   </url><url>
-    <loc>https://huanyuan.mobi/search/</loc>
+    <loc>https://blog.huanyuan.mobi/search/</loc>
   </url>
 </urlset>
