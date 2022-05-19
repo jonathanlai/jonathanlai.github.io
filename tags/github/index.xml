@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on huanyuan.mobi</title>
+    <link>https://blog.huanyuan.mobi/tags/github/</link>
+    <description>Recent content in Github on huanyuan.mobi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <copyright>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</copyright>
+    <lastBuildDate>Sat, 19 Mar 2022 13:20:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>utterances 评论系统使用</title>
+      <link>https://blog.huanyuan.mobi/posts/2022-03/using-utterances/</link>
+      <pubDate>Sat, 19 Mar 2022 13:20:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/posts/2022-03/using-utterances/</guid>
+      <description>关于 utterances utterances 是一款基于 GitHub issues 的评论工具。
+ 官网地址 github地址 utterances应用程序地址  安装 utterances  首先要安装utterances，访问 utterances应用程序地址，然后点击install按钮安装。 安装过程中选择关联的存储库，默认是选择所有库，这里建议选择单个库。   Hugo 配置 在config.toml文件中进行配置：
+[params.utteranc]enable = truerepo = &amp;#34;github-username/github-repository&amp;#34; ##换成自己得issueTerm = &amp;#34;pathname&amp;#34;theme = &amp;#34;github-light&amp;#34; </description>
+    </item>
+    
+  </channel>
+</rss>
