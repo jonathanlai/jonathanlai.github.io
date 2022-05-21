@@ -65,19 +65,13 @@
     <loc>https://blog.huanyuan.mobi/posts/2022-03/cannot-create-namespace-mydb.test101-in-multi-document-transaction/</loc>
     <lastmod>2022-03-21T20:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.huanyuan.mobi/tags/chocolatey/</loc>
-    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
-  </url><url>
     <loc>https://blog.huanyuan.mobi/topic-architecture-design/</loc>
     <lastmod>2022-03-21T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.huanyuan.mobi/tags/windows/</loc>
+    <loc>https://blog.huanyuan.mobi/topics/</loc>
     <lastmod>2022-03-21T18:20:00+08:00</lastmod>
   </url><url>
-    <loc>https://blog.huanyuan.mobi/categories/windows/</loc>
-    <lastmod>2022-03-21T18:20:00+08:00</lastmod>
-  </url><url>
-    <loc>https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
+    <loc>https://blog.huanyuan.mobi/topics/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/</loc>
     <lastmod>2022-03-21T18:20:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.huanyuan.mobi/topic-architecture-design/test/</loc>
@@ -90,6 +84,9 @@
     <lastmod>2022-03-20T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.huanyuan.mobi/categories/spring-cloud/</loc>
+    <lastmod>2022-03-20T22:00:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/topics/spring-cloud-%E4%B8%93%E9%A2%98/</loc>
     <lastmod>2022-03-20T22:00:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-01/</loc>
@@ -113,6 +110,9 @@
     <loc>https://blog.huanyuan.mobi/posts/2022-03/using-utterances/</loc>
     <lastmod>2022-03-19T13:20:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/chocolatey/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.huanyuan.mobi/categories/hugo/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
@@ -125,10 +125,19 @@
     <loc>https://blog.huanyuan.mobi/tags/nvm/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
+    <loc>https://blog.huanyuan.mobi/tags/windows/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/windows/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
+  </url><url>
     <loc>https://blog.huanyuan.mobi/posts/2022-03/windows-package-manager-chocolatey-install/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.huanyuan.mobi/posts/2022-03/windows-hugo-install/</loc>
+    <lastmod>2022-03-18T18:20:00+08:00</lastmod>
+  </url><url>
+    <loc>https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86/</loc>
     <lastmod>2022-03-18T18:20:00+08:00</lastmod>
   </url><url>
     <loc>https://blog.huanyuan.mobi/posts/2022-03/install-nodejs-by-nvm/</loc>

@@ -8,8 +8,8 @@
     <title>2022-03 - huanyuan.mobi</title>
     <meta content="2022-03 - huanyuan.mobi" property="og:title">
     
-    <meta name='description' itemprop="description" content="Java后端技术体系，Android前端技术体系，软件工程师成长等 - ">
-    <meta content="Java后端技术体系，Android前端技术体系，软件工程师成长等 - " property="og:description">
+    <meta name='description' itemprop="description" content="幻猿、程序员o幻猿、Jonathan Lai、赖兴兵、关注Java技术体系、Android技术体系、软件架构、软件工程师成长等 - ">
+    <meta content="幻猿、程序员o幻猿、Jonathan Lai、赖兴兵、关注Java技术体系、Android技术体系、软件架构、软件工程师成长等 - " property="og:description">
     
     <meta content="" name="keywords">
 
@@ -48,9 +48,19 @@
               <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/categories/android">Android</a></li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle  active" href="#" id="dropdown02" data-bs-toggle="dropdown" aria-expanded="false">专题</a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown02">
+              <li><a class="dropdown-item" href="https://blog.huanyuan.mobi/topics/spring-cloud-%E4%B8%93%E9%A2%98/">Spring Cloud</a></li>
+            </ul>
+          </li>
           
         </ul>
         
+        <span class="d-flex">
+          <a class="py-2 px-2" href='https://blog.huanyuan.mobi/index.xml'><i class="fas fa-rss fa-lg"></i></a>
+          <a class="py-2 px-2" href='https://github.com/jonathanlai'><i class="fab fa-github fa-lg"></i></a>
+        </span>
       </div>
     </div>
 </nav>  
@@ -62,17 +72,17 @@
             
             
             
-            <article class="blog-post" style="padding-top: 2rem;">
+            <article class="row blog-post blog-post-shadow p-4 m-4">
                 <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-03/java-application-high-cpu-troubleshooting/"><h3 class="blog-post-title">Java应用高CPU排查</h3></a>
                 
-                <div class="mb-3">
+                <div class="mb-3 border-bottom">
                     <small>
                         <strong>By: Jonathan Lai</strong>
                         | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-22&nbsp;
                         | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/java/'>java</a>
                     </small>
                 </div>
-
+                
                 <div>
                     1、命令top查看高CPU应用的PID(进程ID)。 2、命令ps查询线程ID，awk处理数据，并将TID(线程ID)转换成16进制展示
 ps -mp pid -o THREAD,tid,time | awk &#39;$2 &gt; 30 {printf(&#34;%s \t %x\n&#34;,$0,$8)}&#39; 命令中的30表示CPU使用率超过30%。 3、命令jstack查询高CPU线程栈。
@@ -80,22 +90,25 @@ jstask PID |grep -A 30 TID PID是第一步查询到的高CPU进程ID。 TID是�
 (配图非事故现场图[呲牙])
                 </div>
                 
-                <div>
-                    <a href="https://blog.huanyuan.mobi/posts/2022-03/java-application-high-cpu-troubleshooting/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                <div class="row m-2">
+                    <div class="col-sm-12 text-end">
+                        <a href="https://blog.huanyuan.mobi/posts/2022-03/java-application-high-cpu-troubleshooting/" class="btn btn-outline-secondary" role="button">继续阅读</a>
+                    </div>
                 </div>
+         
             </article>
           
-            <article class="blog-post" style="padding-top: 2rem;">
+            <article class="row blog-post blog-post-shadow p-4 m-4">
                 <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-03/spring-springmvc-springboot-different/"><h3 class="blog-post-title">Spring、SpringMVC和SpringBoot的区别</h3></a>
                 
-                <div class="mb-3">
+                <div class="mb-3 border-bottom">
                     <small>
                         <strong>By: Jonathan Lai</strong>
                         | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-22&nbsp;
                         | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/java/'>java</a>, <a href='https://blog.huanyuan.mobi/tags/spring/'>spring</a>, <a href='https://blog.huanyuan.mobi/tags/springboot/'>springboot</a>
                     </small>
                 </div>
-
+                
                 <div>
                     基本概念 Spring Spring是一个开源的容器框架，它包含了web层，业务层和持久层的组件，其核心是控制反转(IOC)和面向切面编程(AOP)，并且可以配置各种Bean，并维护Bean之间的关联关系。
 SpringMVC SpringMVC是一种web层的MVC开源框架，用于替代servlet处理和响应请求，简化web层的开发。
@@ -108,31 +121,36 @@ SpringBoot原理 SpringBoot是在Spring框架基础上做了一些扩展，消�
 结论 简单来说就是Spring包含SpringMVC，而SpringBoot是在Spring基础上做了一些扩展，使他更符合微服务架构模式的开发、管理。
                 </div>
                 
-                <div>
-                    <a href="https://blog.huanyuan.mobi/posts/2022-03/spring-springmvc-springboot-different/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                <div class="row m-2">
+                    <div class="col-sm-12 text-end">
+                        <a href="https://blog.huanyuan.mobi/posts/2022-03/spring-springmvc-springboot-different/" class="btn btn-outline-secondary" role="button">继续阅读</a>
+                    </div>
                 </div>
+         
             </article>
           
-            <article class="blog-post" style="padding-top: 2rem;">
+            <article class="row blog-post blog-post-shadow p-4 m-4">
                 <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-03/cannot-create-namespace-mydb.test101-in-multi-document-transaction/"><h3 class="blog-post-title">org.springframework.dao.DataIntegrityViolationException: Cannot create namespace</h3></a>
                 
-                <div class="mb-3">
+                <div class="mb-3 border-bottom">
                     <small>
                         <strong>By: Jonathan Lai</strong>
                         | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-21&nbsp;
                         | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/java/'>java</a>, <a href='https://blog.huanyuan.mobi/tags/springboot/'>springboot</a>, <a href='https://blog.huanyuan.mobi/tags/mongodb/'>mongodb</a>
                     </small>
                 </div>
-
+                
                 <div>
                     org.springframework.dao.DataIntegrityViolationException: Cannot create namespace MYDB.Test101 in multi-document transaction. 看错误信息，“不能在多文档事务时候创建集合Test101”。 这个是错误使用MongoDB v4.0+，spring-data v2.1+并且使用事务时候才会遇到的。 spring-data从2.1版本开始，对MongoDB 4.0附带的一项新功能，该功能支持多文档事务。该功能仅适用于现有集合。即，多文档事务不能包含将导致创建新集合的插入操作。您应该先创建自己的集合才能使用此功能。
                 </div>
                 
-                <div>
-                    <a href="https://blog.huanyuan.mobi/posts/2022-03/cannot-create-namespace-mydb.test101-in-multi-document-transaction/" class="btn btn-outline-secondary" role="button">Continue Reading...</a>
+                <div class="row m-2">
+                    <div class="col-sm-12 text-end">
+                        <a href="https://blog.huanyuan.mobi/posts/2022-03/cannot-create-namespace-mydb.test101-in-multi-document-transaction/" class="btn btn-outline-secondary" role="button">继续阅读</a>
+                    </div>
                 </div>
+         
             </article>
-          
           </div>
         <div class="col-md-4">
             <div class="position-sticky">
@@ -155,10 +173,6 @@ SpringBoot原理 SpringBoot是在Spring框架基础上做了一些扩展，消�
         
             <li><a href="https://blog.huanyuan.mobi/categories/android">android</a> (3)</li>
         
-            <li><a href="https://blog.huanyuan.mobi/categories/windows">windows</a> (3)</li>
-        
-            <li><a href="https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86">包管理</a> (3)</li>
-        
             <li><a href="https://blog.huanyuan.mobi/categories/spring-cloud">spring-cloud</a> (2)</li>
         
             <li><a href="https://blog.huanyuan.mobi/categories/springboot">springboot</a> (2)</li>
@@ -168,6 +182,10 @@ SpringBoot原理 SpringBoot是在Spring框架基础上做了一些扩展，消�
             <li><a href="https://blog.huanyuan.mobi/categories/hugo">hugo</a> (1)</li>
         
             <li><a href="https://blog.huanyuan.mobi/categories/node.js">node.js</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/windows">windows</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/categories/%E5%8C%85%E7%AE%A1%E7%90%86">包管理</a> (1)</li>
         
     </ol>
 </div><div class="p-4">
@@ -180,11 +198,7 @@ SpringBoot原理 SpringBoot是在Spring框架基础上做了一些扩展，消�
         
             <li><a href="https://blog.huanyuan.mobi/tags/android">android</a> (3)</li>
         
-            <li><a href="https://blog.huanyuan.mobi/tags/chocolatey">chocolatey</a> (3)</li>
-        
             <li><a href="https://blog.huanyuan.mobi/tags/spring">spring</a> (3)</li>
-        
-            <li><a href="https://blog.huanyuan.mobi/tags/windows">windows</a> (3)</li>
         
             <li><a href="https://blog.huanyuan.mobi/tags/hugo">hugo</a> (2)</li>
         
@@ -192,9 +206,13 @@ SpringBoot原理 SpringBoot是在Spring框架基础上做了一些扩展，消�
         
             <li><a href="https://blog.huanyuan.mobi/tags/springboot">springboot</a> (2)</li>
         
+            <li><a href="https://blog.huanyuan.mobi/tags/chocolatey">chocolatey</a> (1)</li>
+        
             <li><a href="https://blog.huanyuan.mobi/tags/github">github</a> (1)</li>
         
             <li><a href="https://blog.huanyuan.mobi/tags/mongodb">mongodb</a> (1)</li>
+        
+            <li><a href="https://blog.huanyuan.mobi/tags/node.js">node.js</a> (1)</li>
         
     </ol>
 </div>
