@@ -6,7 +6,24 @@
     <description>Recent content on huanyuan.mobi</description>
     <generator>Hugo -- gohugo.io</generator>
     <copyright>Copyright © 2021–2022, huanyuan.mobi，all rights reserved.</copyright>
-    <lastBuildDate>Wed, 20 Apr 2022 14:25:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 25 May 2022 10:32:00 +0800</lastBuildDate><atom:link href="https://blog.huanyuan.mobi/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>typedef的用法，C语言typedef详解</title>
+      <link>https://blog.huanyuan.mobi/posts/2022-05/c-language-typedef-detailed-explanation/</link>
+      <pubDate>Wed, 25 May 2022 10:32:00 +0800</pubDate>
+      
+      <guid>https://blog.huanyuan.mobi/posts/2022-05/c-language-typedef-detailed-explanation/</guid>
+      <description>C语言允许用户使用 typedef 关键字来定义自己习惯的数据类型名称，来替代系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。一旦用户在程序中定义了自己的数据类型名称，就可以在该程序中用自己的数据类型名称来定义变量的类型、数组的类型、指针变量的类型与函数的类型等。
+例如，C 语言在 C99 之前并未提供布尔类型，但我们可以使用 typedef 关键字来定义一个简单的布尔类型，如下面的代码所示：
+typedef int BOOL; #define TRUE 1 #define FALSE 0 定义好之后，就可以像使用基本类型数据一样使用它了，如下面的代码所示：
+BOOL bflag=TRUE;  C99标准中新增了布尔类型，且定义布尔变量的方式有两种，一种是使用 _BOOL，另一种是使用 &amp;lt;stdbool.h&amp;gt; 头文件中定义好的 bool 类型，感兴趣的小伙伴请猛击这里了解详情。  typedef的4种用法 在实际使用中，typedef 的应用主要有如下4种。
+1) 为基本数据类型定义新的类型名 也就是说，系统默认的所有基本类型都可以利用 typedef 关键字来重新定义类型名，示例代码如下所示：
+typedef unsigned int COUNT; 而且，我们还可以使用这种方法来定义与平台无关的类型。比如，要定义一个叫 REAL 的浮点类型，在目标平台一上，让它表示最高精度的类型，即：
+typedef long double REAL; 在不支持 long double 的平台二上，改为：
+typedef double REAL; 甚至还可以在连 double 都不支持的平台三上，改为：
+typedef float REAL; 这样，当跨平台移植程序时，我们只需要修改一下 typedef 的定义即可，而不用对其他源代码做任何修改。其实，标准库中广泛地使用了这个技巧，比如 size_t 在 VC++ 2010 的 crtdefs.h 文件中的定义如下所示：</description>
+    </item>
+    
     <item>
       <title>Android系统Launcher上手</title>
       <link>https://blog.huanyuan.mobi/posts/2022-04/android-system-launcher-to-get-started/</link>

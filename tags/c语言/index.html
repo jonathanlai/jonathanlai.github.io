@@ -5,8 +5,8 @@
     
     
     
-    <title>Topic-spring-clouds - huanyuan.mobi</title>
-    <meta content="Topic-spring-clouds - huanyuan.mobi" property="og:title">
+    <title>C语言 - huanyuan.mobi</title>
+    <meta content="C语言 - huanyuan.mobi" property="og:title">
     
     <meta name='description' itemprop="description" content="幻猿、程序员o幻猿、Jonathan Lai、赖兴兵、关注Java技术体系、Android技术体系、软件架构、软件工程师成长等 - ">
     <meta content="幻猿、程序员o幻猿、Jonathan Lai、赖兴兵、关注Java技术体系、Android技术体系、软件架构、软件工程师成长等 - " property="og:description">
@@ -73,61 +73,31 @@
             
             
             <article class="row blog-post blog-post-shadow p-4 m-4">
-                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-01/"><h3 class="blog-post-title">Spring Cloud入门教程(01)</h3></a>
+                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/posts/2022-05/c-language-typedef-detailed-explanation/"><h3 class="blog-post-title">typedef的用法，C语言typedef详解</h3></a>
                 
                 <div class="mb-3 border-bottom">
                     <small>
                         <strong>By: Jonathan Lai</strong>
-                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-20&nbsp;
-                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/spring/'>spring</a>, <a href='https://blog.huanyuan.mobi/tags/spring-cloud/'>spring-cloud</a>, <a href='https://blog.huanyuan.mobi/tags/java/'>java</a>
+                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-05-25&nbsp;
+                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/c%E8%AF%AD%E8%A8%80/'>c%E8%AF%AD%E8%A8%80</a>
                     </small>
                 </div>
                 
                 <div>
-                    教程由来 都是Java开发十多年的老鸟了，微服务一套基本都用的是 Dubbo 及相关系列，有些东西都是自研，但现实是新人还有周边朋友都在用 Spring Cloud 一套，说是包含了很多微服务用到的东西，使用起来很方便快捷，搭建项目也很舒爽，因此，自学看看呗，到底爽点在哪里。
-关于教程 也不算教程吧，就是记录一下自己学习的过程，方便之后回头来看看。
-至于内容，也没有什么具体的安排，根据自己学习过程来吧，学到哪里算哪里了，之后如果有空，再系统的整理吧。
-关于 Spring Cloud Spring Cloud 为开发者提供了工具来快速构建分布式系统中的一些常见模式（例如配置管理、服务发现、断路器、智能路由、微代理、控制总线、一次性令牌、全局锁、领导选举、分布式会话、集群状态）。分布式系统的协调导致了样板模式，使用 Spring Cloud 开发人员可以快速建立实现这些模式的服务和应用程序。它们在任何分布式环境中都能很好地工作，包括开发人员自己的笔记本电脑、裸机数据中心以及 Cloud Foundry 等托管平台。
-不废话，我们直接开始，至于具体的概念，后续遇到会单独提出来解释。
-入门项目 第一步先生成一个新的 Spring Boot 项目。
-网页打开 https://start.spring.io/ 按照要求填写，如下图：
-然后导出（CTRL+回车键），下载到本地，并解压。
-为了后续教程的支持，我这里将项目结构做一些调整，调整结果如下：
-主要调整的地方：
- 1、将原先的tutorials-parent项目调整成父级项目，packaging类型为pom。 2、新建子文件夹tutorials-01作为子项目，也就是教程01的项目，以后依次每次教程都会新建一个子项目来处理。  主要调整就是这两点，具体调整代码可能有点多，需要的话去 Github 拉源码看看。
-调整完成之后，使得springboot项目运行成功即可：
-今天就先到这儿。
-学习过程中用到的包、框架等等，我尽量都用最新的。
-作为一个程序猿，保持最新，把握技术命脉是必备技能之一。
+                    C语言允许用户使用 typedef 关键字来定义自己习惯的数据类型名称，来替代系统默认的基本类型名称、数组类型名称、指针类型名称与用户自定义的结构型名称、共用型名称、枚举型名称等。一旦用户在程序中定义了自己的数据类型名称，就可以在该程序中用自己的数据类型名称来定义变量的类型、数组的类型、指针变量的类型与函数的类型等。
+例如，C 语言在 C99 之前并未提供布尔类型，但我们可以使用 typedef 关键字来定义一个简单的布尔类型，如下面的代码所示：
+typedef int BOOL; #define TRUE 1 #define FALSE 0 定义好之后，就可以像使用基本类型数据一样使用它了，如下面的代码所示：
+BOOL bflag=TRUE;  C99标准中新增了布尔类型，且定义布尔变量的方式有两种，一种是使用 _BOOL，另一种是使用 &lt;stdbool.h&gt; 头文件中定义好的 bool 类型，感兴趣的小伙伴请猛击这里了解详情。  typedef的4种用法 在实际使用中，typedef 的应用主要有如下4种。
+1) 为基本数据类型定义新的类型名 也就是说，系统默认的所有基本类型都可以利用 typedef 关键字来重新定义类型名，示例代码如下所示：
+typedef unsigned int COUNT; 而且，我们还可以使用这种方法来定义与平台无关的类型。比如，要定义一个叫 REAL 的浮点类型，在目标平台一上，让它表示最高精度的类型，即：
+typedef long double REAL; 在不支持 long double 的平台二上，改为：
+typedef double REAL; 甚至还可以在连 double 都不支持的平台三上，改为：
+typedef float REAL; 这样，当跨平台移植程序时，我们只需要修改一下 typedef 的定义即可，而不用对其他源代码做任何修改。其实，标准库中广泛地使用了这个技巧，比如 size_t 在 VC++ 2010 的 crtdefs.h 文件中的定义如下所示：
                 </div>
                 
                 <div class="row m-2">
                     <div class="col-sm-12 text-end">
-                        <a href="https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-01/" class="btn btn-outline-secondary" role="button">继续阅读</a>
-                    </div>
-                </div>
-         
-            </article>
-          
-            <article class="row blog-post blog-post-shadow p-4 m-4">
-                <a class="title text-decoration-none" href="https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-02/"><h3 class="blog-post-title">Spring Cloud入门教程(02)</h3></a>
-                
-                <div class="mb-3 border-bottom">
-                    <small>
-                        <strong>By: Jonathan Lai</strong>
-                        | <i class="far fa-calendar-alt"></i>&nbsp;2022-03-20&nbsp;
-                        | <i class="fa fa-tags" title="Tags" aria-hidden="true"></i> <a href='https://blog.huanyuan.mobi/tags/spring/'>spring</a>, <a href='https://blog.huanyuan.mobi/tags/spring-cloud/'>spring-cloud</a>, <a href='https://blog.huanyuan.mobi/tags/java/'>java</a>
-                    </small>
-                </div>
-                
-                <div>
-                    这节课程主要讲述Spring Cloud配置快速入门。
-概述 Spring Cloud 配置指的是Spring应用的客户和服务器方法，用于存储和服务跨多个应用程序和环境的分布式配置。
-                </div>
-                
-                <div class="row m-2">
-                    <div class="col-sm-12 text-end">
-                        <a href="https://blog.huanyuan.mobi/topic-spring-cloud/spring-cloud-getting-started-tutorial-02/" class="btn btn-outline-secondary" role="button">继续阅读</a>
+                        <a href="https://blog.huanyuan.mobi/posts/2022-05/c-language-typedef-detailed-explanation/" class="btn btn-outline-secondary" role="button">继续阅读</a>
                     </div>
                 </div>
          
